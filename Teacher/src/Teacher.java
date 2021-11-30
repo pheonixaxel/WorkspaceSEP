@@ -1,8 +1,6 @@
 public class Teacher
 {
 
-  // Julia's github token: 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
-  //don't delete guys please
   private String initials;
 
   public Teacher(String initials)
