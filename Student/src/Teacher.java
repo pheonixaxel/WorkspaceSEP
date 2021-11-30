@@ -34,5 +34,3 @@ public class Teacher
     return initials;
   }
 }
-
-/// test

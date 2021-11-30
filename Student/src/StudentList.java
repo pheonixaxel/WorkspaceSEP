@@ -36,17 +36,18 @@ public class StudentList
     return students.size();
   }
 
-  @Override public boolean equals(Object o)
+  public boolean equals(Object obj)
   {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
-    StudentList that = (StudentList) o;
-    return Objects.equals(students, that.students);
+    if(!(obj instanceof StudentList))return false;
+    StudentList other=(StudentList)obj;
+    for(int i=0;i<students.size();i++)
+    {
+      if(!students.get(i).equals(other.students.get(i)))return false;
+    }
+    return true;
   }
 
-  @Override public String toString()
+  public String toString()
   {
     return "StudentList{" + "students=" + students + '}';
   }

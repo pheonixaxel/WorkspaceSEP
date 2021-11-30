@@ -2,7 +2,6 @@ import java.util.Objects;
 
 public class Student
 {
-  // aici ar trebui sa fie numa un comment  kjg
 
   private String name;
   private int studentNumber;
@@ -33,15 +32,12 @@ public class Student
     return studentNumber;
   }
 
-  public boolean equals(Object o)
+  public boolean equals(Object obj)
   {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
-    Student student = (Student) o;
-    return studentNumber == student.studentNumber && Objects.equals(name,
-        student.name);
+    if(!(obj instanceof Student))return false;
+    Student other = (Student)obj;
+    return studentNumber == other.studentNumber && Objects.equals(name,
+        other.name);
   }
 
   public String toString()

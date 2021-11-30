@@ -26,7 +26,7 @@ public class Room
 
   public boolean equals(Object obj)
   {
-    if (obj instanceof Room)
+    if (!(obj instanceof Room))
     {
       return false;
     }
