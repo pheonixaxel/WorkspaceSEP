@@ -3,7 +3,7 @@ import java.util.Objects;
 
 public class TeacherList
 {
-  private ArrayList<Teacher> teachers; //jh nf j
+  private ArrayList<Teacher> teachers;
 
   public TeacherList(ArrayList <Teacher> teachers){
     this.teachers=teachers;
