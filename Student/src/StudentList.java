@@ -8,7 +8,7 @@ public class StudentList
 
   public StudentList()
   {
-    this.students = students;
+    students = new ArrayList<Student>();
   }
 
   public ArrayList<Student> getAllStudents()

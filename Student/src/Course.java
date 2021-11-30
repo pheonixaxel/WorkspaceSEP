@@ -3,26 +3,20 @@ import java.util.ArrayList;
 
 public class Course
 {
-  private String name;
-  private int id;
+  private String id;
   private int ects;
   private ArrayList<Room> rooms;
   private StudentList students;
   private TeacherList teachers;
 
-  public Course(String name, int id, int ects)
+  public Course(String id)
   {
-    this.name = name;
-    this.id = id;
+    ects=0;
+    this.id=id;
     rooms = new ArrayList<Room>();
   }
 
-  public String getName()
-  {
-    return name;
-  }
-
-  public int getId()
+  public String getId()
   {
     return id;
   }
@@ -67,7 +61,7 @@ public class Course
     if (!(obj instanceof Course))
       return false;
     Course other = (Course) obj;
-    return name.equals(other.name) && id == other.id && ects == other.ects
+    return id == other.id && ects == other.ects
         && rooms.equals(other.rooms);
   }
 

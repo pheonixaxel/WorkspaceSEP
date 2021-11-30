@@ -9,6 +9,7 @@ public class Class
   public Class(char id)
   {
     this.id = id;
+    students=new StudentList();
   }
 
   public void addStudent(Student student)
