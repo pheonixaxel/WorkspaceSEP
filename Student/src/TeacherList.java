@@ -29,7 +29,7 @@ public class TeacherList
     return teachers.size();
   }
 
-  @Override public boolean equals(Object o)
+   public boolean equals(Object o)
   {
     if (this == o)
       return true;
@@ -41,7 +41,7 @@ public class TeacherList
     return Objects.equals(teachers, obj.teachers);
   }
 
-  @Override public String toString()
+  public String toString()
   {
     return "Teachers" + teachers;
   }
