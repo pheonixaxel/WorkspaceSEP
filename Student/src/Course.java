@@ -16,6 +16,16 @@ public class Course
     rooms = new ArrayList<Room>();
   }
 
+  public int getEcts()
+  {
+    return ects;
+  }
+
+  public void setEcts(int ects)
+  {
+    this.ects = ects;
+  }
+
   public String getId()
   {
     return id;
@@ -54,6 +64,15 @@ public class Course
   public ArrayList<Teacher> getAllTeachers()
   {
     return teachers.getAllTeachers();
+  }
+
+  public Course copy()
+  {
+    Course rtrn = new Course(id);
+    rtrn.setEcts(ects);
+    rtrn.students=students;
+    rtrn.teachers=teachers;
+    return rtrn;
   }
 
   public boolean equals(Object obj)
