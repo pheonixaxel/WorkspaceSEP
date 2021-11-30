@@ -11,6 +11,16 @@ public class Class
     this.id = id;
   }
 
+  public void addStudent(Student student)
+  {
+    students.addStudent(student);
+  }
+
+  public void removeStudent(Student student)
+  {
+    students.removeStudent(student);
+  }
+
   public char getId()
   {
     return id;
