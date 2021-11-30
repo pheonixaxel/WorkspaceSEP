@@ -6,7 +6,7 @@ public class Teacher
   public Teacher(String initials)
   {
     this.initials=initials;
-  }
+  } ////nhjgvv
 
   public void setInitials(String initials)
   {
