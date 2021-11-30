@@ -6,7 +6,7 @@ public class StudentList
 
   private ArrayList<Student> students;
 
-  public StudentList(ArrayList<Student> students)
+  public StudentList()
   {
     this.students = students;
   }

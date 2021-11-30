@@ -16,6 +16,14 @@ public class Class
     return id;
   }
 
+  public void addStudent(Student student)
+  {
+    students.addStudent(student);
+  }
+  public void removeStudent(Student student)
+  {
+    students.removeStudent(student);
+  }
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Class))

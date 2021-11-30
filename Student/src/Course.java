@@ -27,6 +27,16 @@ public class Course
     return id;
   }
 
+  public void addStudent(Student student)
+  {
+    students.addStudent(student);
+  }
+
+  public void removeStudent(Student student)
+  {
+    students.removeStudent(student);
+  }
+
   public ArrayList<Room> getRoom()
   {
     return rooms;
