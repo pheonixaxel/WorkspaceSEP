@@ -36,6 +36,14 @@ public class Lesson
     {
         this.course=course;
     }
+    public void setDate(String date)
+    {
+        this.date=date;
+    }
+    public String getDate()
+    {
+        return date;
+    }
     public boolean equals(Object obj)
     {
         if(!(obj instanceof Lesson))
