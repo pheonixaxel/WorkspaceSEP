@@ -1,11 +1,11 @@
 public class Lesson
 {
     private String beginTime;
-    private String endTime; //
+    private String endTime;
     private String date;
     private Course course;
 
-    public Lesson(String beginTime, String endTime, String date, Course course)//add course to diagram
+    public Lesson(String beginTime, String endTime, String date, Course course)
     {
         this.beginTime=beginTime;
         this.endTime=endTime;
