@@ -2,7 +2,7 @@ public class Lesson
 {
     private String beginTime;
     private String endTime;
-    private String date;
+    private String date; //gddxg
     private Course course;
 
     public Lesson(String beginTime, String endTime, String date, Course course)//add course to diagram

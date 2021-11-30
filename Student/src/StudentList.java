@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class StudentList {
+public class StudentList { //crth
 
     private ArrayList<Student> students;
 

@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Student {
+public class Student { //vthc
 
     private String name;
     private int studentNumber;
