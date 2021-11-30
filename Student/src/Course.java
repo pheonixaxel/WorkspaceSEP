@@ -6,7 +6,7 @@ public class Course
   private String name;
   private int id;
   private int ects;
-  private ArrayList<Room> rooms; //change in diagram to plural
+  private ArrayList<Room> rooms;
   private StudentList students;
   private TeacherList teachers;
 
