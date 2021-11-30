@@ -33,7 +33,7 @@ public class TeacherList
   {
     if (this == o)
       return true;
-    if (o == null || getClass() != o.getClass())
+    if (o == null || getClass() != o.getClass()) /////c
       return false;
 
     TeacherList obj = (TeacherList) o;
