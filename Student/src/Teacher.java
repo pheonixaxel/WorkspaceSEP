@@ -5,7 +5,7 @@ public class Teacher
 
   public Teacher(String initials)
   {
-    this.initials=initials;
+    this.initials = initials;
   }
 
   public void setInitials(String initials)
@@ -18,16 +18,19 @@ public class Teacher
     return initials;
   }
 
-  public boolean equals(Object obj){
-    if(!(obj instanceof Teacher)){
+  public boolean equals(Object obj)
+  {
+    if (!(obj instanceof Teacher))
+    {
       return false;
     }
-    Teacher other=(Teacher) obj;
+    Teacher other = (Teacher) obj;
 
     return initials.equals(other.initials);
   }
 
-  public String toString(){
+  public String toString()
+  {
     return initials;
   }
 }

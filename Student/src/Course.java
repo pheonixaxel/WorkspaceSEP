@@ -3,53 +3,57 @@ import java.util.ArrayList;
 
 public class Course
 {
-    private String name;
-    private int id;
-    private int ects;
-    private ArrayList<Room> rooms; //change in diagram to plural
-    private StudentList students;
-    private TeacherList teachers;
+  private String name;
+  private int id;
+  private int ects;
+  private ArrayList<Room> rooms; //change in diagram to plural
+  private StudentList students;
+  private TeacherList teachers;
 
-    public Course(String name, int id, int ects)
-    {
-        this.name=name;
-        this.id=id;
-        rooms = new ArrayList<Room>();
-    }
-    public String getName()
-    {
-        return name;
-    }
-    public int getId()
-    {
-        return id;
-    }
+  public Course(String name, int id, int ects)
+  {
+    this.name = name;
+    this.id = id;
+    rooms = new ArrayList<Room>();
+  }
 
-    public boolean equals(Object obj)
-    {
-        if(!(obj instanceof Course))//delete this comment
-        {
-            return false;
-        }
-        Course other = (Course) obj;
-        return name.equals(other.name) && id==other.id && ects==other.ects && rooms.equals(other.rooms);
-    }
-    public String toString()
-    {
-        return "Course name: " + name + "\nCourse id: " + id + "\nECTS points: " + ects + "\nRoom: " + rooms;
-    }
+  public String getName()
+  {
+    return name;
+  }
 
-    public ArrayList<Room> getRoom()
-    {
-        return rooms;
-    }
-    public ArrayList<Student> getAllStudents()
-    {
-       return students.getAllStudents();
-    }
-    public ArrayList<Teacher> getAllTeachers()
-    {
-      return teachers.getAllTeachers();
-    }
+  public int getId()
+  {
+    return id;
+  }
 
+  public ArrayList<Room> getRoom()
+  {
+    return rooms;
+  }
+
+  public ArrayList<Student> getAllStudents()
+  {
+    return students.getAllStudents();
+  }
+
+  public ArrayList<Teacher> getAllTeachers()
+  {
+    return teachers.getAllTeachers();
+  }
+
+  public boolean equals(Object obj)
+  {
+    if (!(obj instanceof Course))
+      return false;
+    Course other = (Course) obj;
+    return name.equals(other.name) && id == other.id && ects == other.ects
+        && rooms.equals(other.rooms);
+  }
+
+  public String toString()
+  {
+    return "Course name: " + name + "\nCourse id: " + id + "\nECTS points: "
+        + ects + "\nRoom: " + rooms;
+  }
 }
