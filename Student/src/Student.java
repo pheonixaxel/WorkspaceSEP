@@ -1,6 +1,7 @@
 import java.util.Objects;
 
-public class Student { //vthc
+public class Student {
+// aici ar trebui sa fie numa un comment  kjg
 
     private String name;
     private int studentNumber;
@@ -9,21 +10,20 @@ public class Student { //vthc
         this.name = name;
         this.studentNumber = studentNumber;
     }
-// SETTERS
+
     public void setName(String name) {
         this.name = name;
     }
     public void setStudentNumber(int studentNumber) {
         this.studentNumber = studentNumber;
     }
-// GETTERS
+
     public String getName() {
         return name;
     }
     public int getStudentNumber() {
         return studentNumber;
     }
-// I DO NOT KNOW HOW TO NAME THESE... i don't even know why i started to write these comments in the first place
 
 
     public boolean equals(Object o) {
