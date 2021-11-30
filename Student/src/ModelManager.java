@@ -16,7 +16,7 @@ public class ModelManager
 
   public static void removeStudent(Student student, StudentList list)
   {
-    list.removeStudent(student) }
+    list.removeStudent(student); }
   public static void addLesson (Lesson
     lesson, Schedule schedule)
     {
