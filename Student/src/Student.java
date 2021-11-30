@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 public class Student {
-// aici ar trebui sa fie numa un comment
+// aici ar trebui sa fie numa un comment  kjg
 
     private String name;
     private int studentNumber;
