@@ -86,7 +86,7 @@ public class Course
 
   public String toString()
   {
-    return "Course name: " + name + "\nCourse id: " + id + "\nECTS points: "
+    return "Course id: " + id + "\nECTS points: "
         + ects + "\nRoom: " + rooms;
   }
 }
