@@ -1,7 +1,7 @@
 public class Room
 {
     private int size;
-    private String id;
+    private String id; //
 
 
     public Room(int size, String id)
