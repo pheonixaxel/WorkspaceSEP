@@ -29,16 +29,21 @@ public class TeacherList
     return teachers.size();
   }
 
-   public boolean equals(Object o)
+   public boolean equals(Object obj)
   {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
+    if (!(obj instanceof TeacherList)){
       return false;
+  }
 
-    TeacherList obj = (TeacherList) o;
+    TeacherList other = (TeacherList) obj;
 
-    return Objects.equals(teachers, obj.teachers);
+    for (int i = 0; i < teachers.size(); i++)
+    {
+      if(!(teachers.get(i).equals(other.teachers.get(i)))){
+        return false;
+      }
+    }
+    return true;
   }
 
   public String toString()

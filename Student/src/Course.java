@@ -7,6 +7,8 @@ public class Course
     private int id;
     private int ects;
     private ArrayList<Room> rooms; //change in diagram to plural
+    private StudentList students;
+    private TeacherList teachers;
 
     public Course(String name, int id, int ects)
     {
@@ -43,11 +45,11 @@ public class Course
     }
     public ArrayList<Student> getAllStudents()
     {
-
+       return students.getAllStudents();
     }
     public ArrayList<Teacher> getAllTeachers()
     {
-
+      return teachers.getAllTeachers();
     }
 
 }
