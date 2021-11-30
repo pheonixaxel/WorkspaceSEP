@@ -14,7 +14,7 @@ public class Room
     {
         this.size=size;
     }
-    public int getSize()
+    public int getSize()//fgxd
     {
         return size;
     }

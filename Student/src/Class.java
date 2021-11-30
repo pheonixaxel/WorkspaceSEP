@@ -12,7 +12,7 @@ public class Class {
 
     public char getId() {
         return id;
-    }
+    } //d
 
     @Override
     public boolean equals(Object o) {
