@@ -38,7 +38,7 @@ public class Lesson
     }
     public boolean equals(Object obj)
     {
-        if(obj instanceof Lesson)
+        if(!(obj instanceof Lesson))
         {
             return false;
         }

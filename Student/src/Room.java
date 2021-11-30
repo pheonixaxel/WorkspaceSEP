@@ -3,7 +3,7 @@ public class Room
     private int size;
     private String id; //
 
-
+/// delete this comment
     public Room(int size, String id)
     {
         this.size=size;

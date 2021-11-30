@@ -8,7 +8,7 @@ public class Schedule
   {
     lessons = new ArrayList<Lesson>();
   }
-  public ArrayList<Lessons> getAllLessons()
+  public ArrayList<Lesson> getAllLessons()
   {
     return lessons;
   }
@@ -29,7 +29,7 @@ public class Schedule
   {
     lessons.add(lesson);
   }
-  public void removeLessons(Lesson lesson)
+  public void removeLesson(Lesson lesson)
   {
     lessons.remove(lesson);
   }

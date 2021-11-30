@@ -27,7 +27,7 @@ public class Course
 
     public boolean equals(Object obj)
     {
-        if(obj instanceof Course)
+        if(!(obj instanceof Course))//delete this comment
         {
             return false;
         }
