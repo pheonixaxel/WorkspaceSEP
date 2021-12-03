@@ -36,6 +36,6 @@ public class Room
 
   public String toString()
   {
-    return "Room size: " + size + "\nRoom id: " + id;
+    return id + ",";
   }
 }

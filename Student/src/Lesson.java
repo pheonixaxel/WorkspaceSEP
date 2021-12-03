@@ -66,7 +66,6 @@ public class Lesson
 
   public String toString()
   {
-    return "Course: " + course + "\nStart time: " + beginTime + "\nEnd time: "
-        + endTime + "\nDate: " + date;
+    return course + "," + beginTime + "," + endTime + "," + date;
   }
 }

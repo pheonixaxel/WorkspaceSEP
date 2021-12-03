@@ -52,4 +52,13 @@ public class Schedule
     }
     return true;
   }
+  public String toString()
+  {
+    String rtrn="";
+    for(int i=0;i<lessons.size();i++)
+    {
+      rtrn+=lessons.get(i)+"\n";
+    }
+    return rtrn;
+  }
 }
