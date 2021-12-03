@@ -1,20 +1,18 @@
 import java.util.Objects;
 
-public class Student
+public class Student extends Person
 {
-
-  private String name;
   private int studentNumber;
 
   public Student(String name, int studentNumber)
   {
-    this.name = name;
+    super(name);
     this.studentNumber = studentNumber;
   }
 
   public void setName(String name)
   {
-    this.name = name;
+    super.setName(name);
   }
 
   public void setStudentNumber(int studentNumber)
@@ -24,7 +22,7 @@ public class Student
 
   public String getName()
   {
-    return name;
+    return super.getName();
   }
 
   public int getStudentNumber()
@@ -36,13 +34,11 @@ public class Student
   {
     if(!(obj instanceof Student))return false;
     Student other = (Student)obj;
-    return studentNumber == other.studentNumber && Objects.equals(name,
-        other.name);
+    return studentNumber == other.studentNumber && super.equals(obj);
   }
 
   public String toString()
   {
-    return "Student{" + "name='" + name + '\'' + ", studentNumber="
-        + studentNumber + '}';
+    return super.toString()+","+studentNumber;
   }
 }
