@@ -81,13 +81,6 @@ public class Date
     return year;
   }
 
-  /*public boolean equals(MyDate object2)
-  {
-      if (day == object2.day && month == object2.month && year == object2.year)
-          return true;
-      else
-          return false;
-  }*/
   public int compare(Object obj)
   {
     if (!(obj instanceof Date))
