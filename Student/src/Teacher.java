@@ -1,36 +1,30 @@
-public class Teacher
+public class Teacher extends Person
 {
-
-  private String initials;
 
   public Teacher(String initials)
   {
-    this.initials = initials;
+    super(initials);
   }
 
   public void setInitials(String initials)
   {
-    this.initials = initials;
+    super.setName(initials);
   }
 
   public String getInitials()
   {
-    return initials;
+    return super.getName();
   }
 
   public boolean equals(Object obj)
   {
-    if (!(obj instanceof Teacher))
-    {
-      return false;
-    }
+    if (!(obj instanceof Teacher))return false;
     Teacher other = (Teacher) obj;
-
-    return initials.equals(other.initials);
+    return super.equals(obj);
   }
 
   public String toString()
   {
-    return initials;
+    return super.toString();
   }
 }
