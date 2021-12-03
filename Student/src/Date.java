@@ -28,7 +28,7 @@ public class Date
     {
       case 1, 3, 5, 7, 8, 10, 12:
       {
-        if (day > 31)
+        if (day >   31)
           throw new IllegalDateException();
         break;
       }
