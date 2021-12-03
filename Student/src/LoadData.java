@@ -70,7 +70,7 @@ public class LoadData {
             System.out.println("File was not found, or could not be opened");
         }
         ArrayList<Room> rooms = new ArrayList<Room>();
-        String[] roomsList = null;
+        String[] roomsList = new String[];
         try {
             roomsList = MyFileHandler.readArrayFromTextFile("rooms.txt");
             for (int i = 0; i < roomsList.length; i++) {

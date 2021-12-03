@@ -49,16 +49,16 @@ public class Date
     this.day = day;
   }
 
-  public void setMonth(int luna)
+  public void setMonth(int month)
   {
-    if (luna > 12 || luna < 1)
+    if (month > 12 || month < 1)
       throw new IllegalDateException();
-    month = luna;
+    this.month = month;
   }
 
-  public void setYear(int an)
+  public void setYear(int year)
   {
-    year = an;
+    this.year = year;
   }
 
   public boolean isLeapYear()
