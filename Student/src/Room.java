@@ -3,7 +3,7 @@ public class Room
   private int size;
   private String id;
 
-  public Room(int size, String id)
+  public Room(String id, int size)
   {
     this.size = size;
     this.id = id;
