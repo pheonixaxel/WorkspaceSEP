@@ -1,24 +1,32 @@
+import javax.swing.*;
 import javax.xml.transform.Templates;
 import java.util.ArrayList;
 
 public class Course
 {
   private String id;
+  private int semester;
   private int ects;
   private ArrayList<Room> rooms;
   private StudentList students;
   private TeacherList teachers;
 
-  public Course(String id)
+  public Course(int semester, String id)
   {
     ects=0;
     this.id=id;
+    this.semester=semester;
     rooms = new ArrayList<Room>();
   }
 
   public int getEcts()
   {
     return ects;
+  }
+
+  public int getSemester()
+  {
+    return semester;
   }
 
   public void setEcts(int ects)
@@ -68,7 +76,7 @@ public class Course
 
   public Course copy()
   {
-    Course rtrn = new Course(id);
+    Course rtrn = new Course(semester,id);
     rtrn.setEcts(ects);
     rtrn.students=students;
     rtrn.teachers=teachers;
@@ -80,7 +88,7 @@ public class Course
     if (!(obj instanceof Course))
       return false;
     Course other = (Course) obj;
-    return id == other.id && ects == other.ects
+    return id == other.id && ects == other.ects && semester==other.semester
         && rooms.equals(other.rooms);
   }
 

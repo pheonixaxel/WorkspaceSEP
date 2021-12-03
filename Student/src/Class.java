@@ -4,12 +4,39 @@ import java.util.Objects;
 public class Class
 {
   private StudentList students;
-  private char id;
+  private String id;
+  private int semester;
+  private CourseList courses;
 
-  public Class(char id)
+  public Class(int semester,String id)
   {
     this.id = id;
+    this.semester=semester;
     students=new StudentList();
+    courses=new CourseList();
+  }
+
+  public int getSemester()
+  {
+    return semester;
+  }
+
+  public Course getCourse(int index)
+  {
+    return courses.getCourse(index);
+  }
+
+  public boolean contains(Course course)
+  {
+    return courses.contains(course);
+  }
+  public Course getCourse(Course course)
+  {
+    return courses.getCourse(course);
+  }
+  public void addCourse(Course course)
+  {
+    courses.addCourse(course);
   }
 
   public void addStudent(Student student)
@@ -22,7 +49,7 @@ public class Class
     students.removeStudent(student);
   }
 
-  public char getId()
+  public String getId()
   {
     return id;
   }
@@ -32,11 +59,11 @@ public class Class
     if (!(obj instanceof Class))
       return false;
     Class other = (Class) obj;
-    return students.equals(other.students) && id == other.id;
+    return students.equals(other.students) && id.equals(other.id) && semester==other.semester;
   }
 
   public String toString()
   {
-    return "Class{" + "studens=" + students + ", id=" + id + '}';
+    return semester+id+","+students;
   }
 }

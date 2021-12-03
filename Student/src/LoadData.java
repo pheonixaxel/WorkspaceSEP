@@ -1,91 +1,73 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.SplittableRandom;
+import java.util.HashSet;
 
 public class LoadData {
-    public static void main(String[] args) {
-        Class classX = new Class('X');
-        Class classY = new Class('Y');
-        Class classZ = new Class('Z');
-        Class classDK = new Class('D');
-        String[] studentsArray = null;
+    public static void main(String[] args)
+    {
 
-        try {
-            studentsArray = MyFileHandler.readArrayFromTextFile("students.txt");
-            for (int i = 0; i < studentsArray.length; i++) {
-                String temp = studentsArray[i];
-                String[] tempArr = temp.split(",");
-                String semester = tempArr[0];
-                String idChar = tempArr[1];
-                int idStudent = Integer.parseInt(tempArr[2]);
-                String name = tempArr[3];
-                if (idChar.equals("X")) {
-                    classX.addStudent(new Student(name, idStudent));
-                } else if (idChar.equals("Y")) {
-                    classY.addStudent(new Student(name, idStudent));
-                } else if (idChar.equals("Z")) {
-                    classZ.addStudent(new Student(name, idStudent));
-                } else if (idChar.equals("DK")) {
-                    classDK.addStudent(new Student(name, idStudent));
-                }
+        // CLASSES
+        ArrayList<Class> classes = new ArrayList<Class>();
+        String[]studentArray= null;
+        try{
+            studentArray = MyFileHandler.readArrayFromTextFile("students.txt");
+            for(int i=0;i<studentArray.length;i++)
+            {
+                String[] tempString = studentArray[i].split(",");
+                Class tempClass = new Class(Integer.parseInt(tempString[0]),tempString[1]);
+                Student tempStudent = new Student(tempString[3],Integer.parseInt(tempString[2]));
+                if(!classes.contains(tempClass))classes.add(tempClass);
+                classes.get(classes.indexOf(tempClass)).addStudent(tempStudent);
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File was not found, or could not be opened");
         }
+        catch(FileNotFoundException e) {
+            System.out.println("File was not found or could not be opened");
+        }
+        // CLASSES
 
+        // COURSES
+        ArrayList<Course> courses = new ArrayList<Course>();
+        String[] courseArray = null;
+        try{
+            courseArray = MyFileHandler.readArrayFromTextFile("courses.txt");
+            for(int i=0;i<courseArray.length;i++)
+            {
+                String[] tempString = courseArray[i].split(",");
+                Course tempCourse = new Course(Integer.parseInt(tempString[0]),tempString[2]);
+                tempCourse.setEcts(Integer.parseInt(tempString[4]));
+                Teacher tempTeacher = new Teacher(tempString[3]);
+                Class tempClass = new Class(Integer.parseInt(tempString[0]),tempString[1]);
 
-        Course courseSDJ = new Course("SDJ");
-        Course courseDMA = new Course("DMA");
-        Course courseRWD = new Course("RWD");
-        Course courseSEP = new Course("SEP");
-        String[] courses = null;
-
-
-        try {
-            courses = MyFileHandler.readArrayFromTextFile("courses.txt");
-            for (int i = 0; i < courses.length; i++) {
-                String temp = courses[i];
-                String[] tempArr = temp.split(",");
-                String semester = tempArr[0];
-                String idChar = tempArr[1];
-                String idCourse = tempArr[2];
-                String teacherInitials = tempArr[3];
-                int ects = Integer.parseInt(tempArr[4]);
-
-                if (idCourse.equals("SDJ")) {
-                    courseSDJ.addTeacher(new Teacher(teacherInitials));
-                    courseSDJ.setEcts(ects);
-                } else if (idChar.equals("DMA")) {
-                    courseDMA.addTeacher(new Teacher(teacherInitials));
-                    courseDMA.setEcts(ects);
-                } else if (idChar.equals("RWD")) {
-                    courseRWD.addTeacher(new Teacher(teacherInitials));
-                    courseRWD.setEcts(ects);
-                } else if (idChar.equals("SEP")) {
-                    courseSEP.addTeacher(new Teacher(teacherInitials));
-                    courseSEP.setEcts(ects);
+                if(!classes.get(classes.indexOf(tempClass)).contains(tempCourse))
+                {
+                    classes.get(classes.indexOf(tempClass)).addCourse(tempCourse);
                 }
+                classes.get(classes.indexOf(tempClass)).getCourse(tempCourse).addTeacher(tempTeacher);
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("File was not found, or could not be opened");
         }
+        catch(FileNotFoundException e) {
+            System.out.println("File was not found or could not be opened");
+        }
+        // COURSES
+
+        //ROOMS
         ArrayList<Room> rooms = new ArrayList<Room>();
-        String[] roomsList = null;
-        try {
-            roomsList = MyFileHandler.readArrayFromTextFile("rooms.txt");
-            for (int i = 0; i < roomsList.length; i++) {
-                String temp = roomsList[i];
-                String[] tempArr = temp.split(",");
-                String idRoom = tempArr[0];
-                int size = Integer.parseInt(tempArr[1]);
-                rooms.add(new Room(idRoom, size));
+        String[] roomArray=null;
+        try{
+            roomArray = MyFileHandler.readArrayFromTextFile("rooms.tx");
+            for(int i=0;i<roomArray.length;i++)
+            {
+                String[] tempString = roomArray[i].split(",");
+                Room tempRoom = new Room(tempString[0],Integer.parseInt(tempString[1]));
+                rooms.add(tempRoom);
             }
-
         }
-        catch (FileNotFoundException e) {
-            System.out.println("Error opening file ");
+        catch(FileNotFoundException e) {
+            System.out.println("File was not found or could not be opened");
         }
-
-
+        //ROOMS
     }
 }
