@@ -20,45 +20,45 @@ public class Date
     year = object.year;
   }
 
-  public void setDay(int zi)
+  public void setDay(int day)
   {
-    if (zi < 1)
+    if (day < 1)
       throw new IllegalDateException();
     switch (month)
     {
       case 1, 3, 5, 7, 8, 10, 12:
       {
-        if (zi > 31)
+        if (day >   31)
           throw new IllegalDateException();
         break;
       }
       case 2:
       {
-        if (isLeapYear() && zi > 29)
+        if (isLeapYear() && day > 29)
           throw new IllegalDateException();
-        if (!isLeapYear() && zi > 28)
+        if (!isLeapYear() && day > 28)
           throw new IllegalDateException();
         break;
       }
       default:
       {
-        if (zi > 30)
+        if (day > 30)
           throw new IllegalDateException();
       }
     }
-    day = zi;
+    this.day = day;
   }
 
-  public void setMonth(int luna)
+  public void setMonth(int month)
   {
-    if (luna > 12 || luna < 1)
+    if (month > 12 || month < 1)
       throw new IllegalDateException();
-    month = luna;
+    this.month = month;
   }
 
-  public void setYear(int an)
+  public void setYear(int year)
   {
-    year = an;
+    this.year = year;
   }
 
   public boolean isLeapYear()
