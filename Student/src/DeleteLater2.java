@@ -30,17 +30,19 @@ public class DeleteLater2
 
       // We proceed to go through all lessons and add them to the document
       ArrayList<Lesson> lessons = schedule.getAllLessons();
+      Element days[] = new Element[5];
       ArrayList<Element> elements = new ArrayList<Element>();
+      Clock prev = new Clock(0,0);
+      int c=-1;
       for(int i=0;i<lessons.size();i++)
       {
-        // We create a new element and tag it "lesson"
+        if(prev.compare(lessons.get(i).getDate())==-1){
+          days[++c] = document.createElement("day");
+          root.appendChild(days[c]);
+        }
         elements.add(document.createElement("lesson"));
-
-        // We append a text node to add the .toString value of the lesson object
         elements.get(i).appendChild(document.createTextNode(lessons.get(i).toString()));
-
-        // We append the newly created element to the root
-        root.appendChild(elements.get(i));
+        days[c].appendChild(elements.get(i));
       }
 
       // Last we actually convert the DOM object to a xml file
