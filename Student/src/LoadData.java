@@ -13,7 +13,7 @@ public class LoadData {
         ArrayList<Class> classes = new ArrayList<Class>();
         String[]studentArray= null;
         try{
-            studentArray = MyFileHandler.readArrayFromTextFile("students.txt");
+            studentArray = MyFileHandler.readArrayFromTextFile("../students.txt");
             for(int i=0;i<studentArray.length;i++)
             {
                 String[] tempString = studentArray[i].split(",");
@@ -32,7 +32,7 @@ public class LoadData {
         ArrayList<Course> courses = new ArrayList<Course>();
         String[] courseArray = null;
         try{
-            courseArray = MyFileHandler.readArrayFromTextFile("courses.txt");
+            courseArray = MyFileHandler.readArrayFromTextFile("../courses.txt");
             for(int i=0;i<courseArray.length;i++)
             {
                 String[] tempString = courseArray[i].split(",");
@@ -57,7 +57,7 @@ public class LoadData {
         ArrayList<Room> rooms = new ArrayList<Room>();
         String[] roomArray=null;
         try{
-            roomArray = MyFileHandler.readArrayFromTextFile("rooms.tx");
+            roomArray = MyFileHandler.readArrayFromTextFile("../rooms.txt");
             for(int i=0;i<roomArray.length;i++)
             {
                 String[] tempString = roomArray[i].split(",");
