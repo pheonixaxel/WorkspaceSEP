@@ -1,34 +1,34 @@
 public class Lesson
 {
-  private String beginTime;
-  private String endTime;
-  private String date;
+  private Clock beginTime;
+  private Clock endTime;
+  private Date date;
   private Course course;
 
-  public Lesson(String beginTime, String endTime, String date, Course course)
+  public Lesson(Clock beginTime ,Date date,Clock endTime, Course course)
   {
-    this.beginTime = beginTime;
-    this.endTime = endTime;
-    this.date = date;
+    this.beginTime = beginTime.copy();
+    this.endTime = endTime.copy();
+    this.date = date.copy();
     this.course = course;
   }
 
-  public void setBeginTime(String beginTime)
+  public void setBeginTime(Clock beginTime)
   {
     this.beginTime = beginTime;
   }
 
-  public String getBeginTime()
+  public Clock getBeginTime()
   {
     return beginTime;
   }
 
-  public void setEndTime(String endTime)
+  public void setEndTime(Clock endTime)
   {
     this.endTime = endTime;
   }
 
-  public String getEndTime()
+  public Clock getEndTime()
   {
     return endTime;
   }
@@ -43,12 +43,12 @@ public class Lesson
     this.course = course;
   }
 
-  public void setDate(String date)
+  public void setDate(Date date)
   {
     this.date = date;
   }
 
-  public String getDate()
+  public Date getDate()
   {
     return date;
   }

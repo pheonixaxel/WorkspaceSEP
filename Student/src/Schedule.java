@@ -24,7 +24,7 @@ public class Schedule
     ArrayList<Lesson> rtrn = new ArrayList<Lesson>();
     for (int i = 0; i < lessons.size(); i++)
     {
-      if (getLesson(i).getDate().equals(date)==0)
+      if (getLesson(i).getDate().compare(date)==0)
         rtrn.add(getLesson(i));
     }
     return rtrn;

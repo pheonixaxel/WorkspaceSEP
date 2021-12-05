@@ -61,8 +61,10 @@ public class Clock {
         }
         return true;
     }
-
-
+    public Clock copy()
+    {
+        return new Clock(hour,minute);
+    }
     public String toString ()
     {
         return hour + " : " + minute;
