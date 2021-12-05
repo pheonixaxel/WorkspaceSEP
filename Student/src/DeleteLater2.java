@@ -20,7 +20,7 @@ public class DeleteLater2
   {
     try
     {
-      // We create the necesary object to be able to create an .xml file
+      // We create the necessary object to be able to create an .xml file
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder builder = factory.newDocumentBuilder();
       Document document = builder.newDocument();

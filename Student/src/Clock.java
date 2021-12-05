@@ -67,7 +67,7 @@ public class Clock {
     }
     public String toString ()
     {
-        return hour + " : " + minute;
+        return hour + ":" + minute;
     }
 
 }
