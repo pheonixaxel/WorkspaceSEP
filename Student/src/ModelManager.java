@@ -47,7 +47,7 @@ public class ModelManager
   {
     try
     {
-      MyFileHandler.writeToTextFile("schedule.txt", "");
+      MyFileHandler.writeToTextFile("schedule.txt", schedule.toString());
     }
     catch (FileNotFoundException e)
     {

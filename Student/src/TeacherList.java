@@ -56,6 +56,11 @@ public class TeacherList
 
   public String toString()
   {
-    return "Teachers" + teachers;
+    String rtrn="";
+    for(int i=0;i<teachers.size();i++)
+    {
+      rtrn+=teachers.get(i).toString()+" ";
+    }
+    return rtrn;
   }
 }

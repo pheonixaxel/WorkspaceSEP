@@ -36,6 +36,6 @@ public class Room
 
   public String toString()
   {
-    return id + ",";
+    return id + " ";
   }
 }

@@ -94,6 +94,6 @@ public class Course
 
   public String toString()
   {
-    return id + "," + rooms + ",";
+    return semester+","+ id +"," + teachers + "," + rooms + ",";
   }
 }
