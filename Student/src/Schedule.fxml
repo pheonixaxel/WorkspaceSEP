@@ -60,7 +60,7 @@
                   <ChoiceBox fx:id="courseChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <ChoiceBox fx:id="teacherFirstChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label fx:id="teacherSecondLabelSchedule" text="Teacher 2.:" GridPane.rowIndex="4" />
-                  <ChoiceBox fx:id="teacherSecoundChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="teacherSecondChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label fx:id="roomLabelSchedule" text="Room:" GridPane.rowIndex="5" />
                   <ChoiceBox fx:id="roomChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <DatePicker fx:id="dateChoiceSchedule" GridPane.columnIndex="1" GridPane.rowIndex="6" />
