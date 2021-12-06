@@ -15,20 +15,20 @@ public class ClassesController
   private  ModelManager modelManager;
   private ViewHandler viewHandler;
 
-  @FXML ChoiceBox semesterChoiceClasses;
-
 
   public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.root = root;
+    reset();
   }
 
   public void reset()
   {
-
+    if(modelManager!=null) updateClasses();
   }
+
   public void updateClasses()
   {
 
@@ -39,8 +39,4 @@ public class ClassesController
     return root;
   }
 
-  public void handleActions(ActionEvent e)
-  {
-
-  }
 }
