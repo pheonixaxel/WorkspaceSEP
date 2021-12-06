@@ -23,7 +23,6 @@ public class ClassesController
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.root = root;
-    reset();
   }
 
   public void reset()
