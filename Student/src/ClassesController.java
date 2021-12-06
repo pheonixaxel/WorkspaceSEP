@@ -1,3 +1,4 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -13,6 +14,7 @@ public class ClassesController
   private Region root;
   private  ModelManager modelManager;
   private ViewHandler viewHandler;
+
   @FXML ChoiceBox semesterChoiceClasses;
 
 
@@ -40,6 +42,6 @@ public class ClassesController
 
   public void handleActions(ActionEvent e)
   {
-    if(e.getSource() ==semesterChoiceClasses)
+
   }
 }

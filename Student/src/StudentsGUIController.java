@@ -43,10 +43,6 @@ public class StudentsGUIController
     {
         if(e.getSource() == classesButtonMain)
         {
-            viewHandler.openView("StudentsGUI");
-        }
-        else if(e.getSource() == classesButtonMain)
-        {
             viewHandler.openView("Classes");
         }
         else if(e.getSource() == coursesButtonMain)
