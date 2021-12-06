@@ -1,3 +1,4 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -14,19 +15,31 @@ public class ClassesController
   private  ModelManager modelManager;
   private ViewHandler viewHandler;
 
+  @FXML ChoiceBox semesterChoiceClasses;
 
 
-  public void init(ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
+    this.viewHandler = viewHandler;
     this.modelManager = modelManager;
-    reset();
+    this.root = root;
   }
 
   public void reset()
   {
-    if(modelManager!=null) updateClasses();
+
   }
   public void updateClasses()
+  {
+
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
+
+  public void handleActions(ActionEvent e)
   {
 
   }

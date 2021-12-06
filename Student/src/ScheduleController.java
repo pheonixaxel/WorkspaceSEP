@@ -1,40 +1,47 @@
+import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.Region;
+import javafx.stage.Stage;
+
+import javax.swing.text.View;
+
+public class ScheduleController
+{
+  private Region root;
+  private  ModelManager modelManager;
+  private ViewHandler viewHandler;
+
+  @FXML ChoiceBox semesterChoiceClasses;
 
 
-public class ScheduleController {
+  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
+  {
+    this.viewHandler = viewHandler;
+    this.modelManager = modelManager;
+    this.root = root;
+    reset();
+  }
 
-    private ModelManager modelManager;
+  public void reset()
+  {
 
-    @FXML private ChoiceBox<String> semesterChoiceSchedule;
-    @FXML private ChoiceBox classChoiceSchedule;
-    @FXML private ChoiceBox courseChoiceSchedule;
-    @FXML private ChoiceBox teacherFirstChoiceSchedule;
-    @FXML private ChoiceBox teacherSecondChoiceSchedule;
-    @FXML private ChoiceBox roomChoiceSchedule;
-    @FXML private DatePicker dateChoiceSchedule;
-    @FXML private TextField beginHourSchedule;
-    @FXML private TextField beginMinutesSchedule;
-    @FXML private TextField endHourSchedule;
-    @FXML private TextField endMinutesSchedule;
-    @FXML private Button addButtonSchedule;
-    @FXML private Button removeButtonSchedule;
-    @FXML private Button goBackSchedule;
-    @FXML private TextArea textAreaSchedule;
+  }
+  public void updateClasses()
+  {
 
-    public void init(ModelManager modelManager)
-    {
-        this.modelManager = modelManager;
-    }
-    private class Listener implements EventHandler<ActionEvent>
-    {
-        public void handle(ActionEvent e)
-        {
-            semesterChoiceSchedule.getItems().add("Semester 1");
-        }
-    }
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
+
+  public void handleActions(ActionEvent e)
+  {
+
+  }
 }
-
-

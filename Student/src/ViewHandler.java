@@ -12,6 +12,7 @@ public class ViewHandler
     private StudentsGUIController studentsGUIController;
     private CoursesController coursesController;
     private ClassesController classesController;
+    private ScheduleController scheduleController;
 
 
     private ModelManager modelManager;
@@ -43,7 +44,7 @@ public class ViewHandler
                 root = loadClassesView();
                 break;
             case "Schedule":
-                root = loadSchedule();
+                root = loadScheduleView();
                 break;
         }
         scene.setRoot(root);
@@ -107,7 +108,7 @@ public class ViewHandler
         return coursesController.getRoot();
     }
 
-    private Region loadClassesController()
+    private Region loadClassesView()
     {
         if(classesController == null)
         {
@@ -131,4 +132,31 @@ public class ViewHandler
 
         return classesController.getRoot();
     }
+
+    private Region loadScheduleView()
+    {
+        if(classesController == null)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("Schedule.fxml"));
+                Region root = loader.load();
+                scheduleController = loader.getController();
+                scheduleController.init(this, modelManager, root);
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            scheduleController.reset();
+        }
+
+        return scheduleController.getRoot();
+    }
+
+
 }
