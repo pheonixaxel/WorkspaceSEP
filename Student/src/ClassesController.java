@@ -13,21 +13,33 @@ public class ClassesController
   private Region root;
   private  ModelManager modelManager;
   private ViewHandler viewHandler;
+  @FXML ChoiceBox semesterChoiceClasses;
 
 
-
-  public void init(ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
+    this.viewHandler = viewHandler;
     this.modelManager = modelManager;
+    this.root = root;
     reset();
   }
 
   public void reset()
   {
-    if(modelManager!=null) updateClasses();
+
   }
   public void updateClasses()
   {
 
+  }
+
+  public Region getRoot()
+  {
+    return root;
+  }
+
+  public void handleActions(ActionEvent e)
+  {
+    if(e.getSource() ==semesterChoiceClasses)
   }
 }
