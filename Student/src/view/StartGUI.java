@@ -13,7 +13,7 @@ public class StartGUI extends Application
         window.setTitle("SEP");
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../Schedule.fxml"));
+        loader.setLocation(getClass().getResource("../StudentsGUI.fxml"));
         Scene scene = new Scene(loader.load());
 
         window.setResizable(false);

@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="StudentsGUIController">
    <children>
       <MenuBar>
         <menus>
@@ -46,7 +46,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="classesButtonMain" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #D9A9B8;" text="Classes" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Button fx:id="classesButtonMain" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleActions" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #D9A9B8;" text="Classes" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

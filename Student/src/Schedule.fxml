@@ -30,11 +30,6 @@
                   <MenuItem mnemonicParsing="false" text="Delete" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="About" />
-               </items>
-            </Menu>
          </menus>
       </MenuBar>
       <HBox prefHeight="359.0" prefWidth="600.0">
