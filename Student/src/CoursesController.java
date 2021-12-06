@@ -8,7 +8,7 @@ public class CoursesController
 
 
 
-  public void init(ModelManager modelManager)
+  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
     this.root=root;
