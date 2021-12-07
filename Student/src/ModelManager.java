@@ -17,6 +17,7 @@ public class ModelManager
 {
   private String fileName;
   private Schedule schedule;
+  private ClassList classList;
   public static final String filePath = "schedule.xml";
 
   public ModelManager(String fileName)
@@ -24,22 +25,27 @@ public class ModelManager
     this.fileName = fileName;
   }
 
-  public static void addStudent(Student student, StudentList list)
+  public ArrayList<Class> getAllClasses()
+  {
+    return classList.getAllClasses();
+  }
+
+  public void addStudent(Student student, StudentList list)
   {
     list.addStudent(student);
   }
 
-  public static void removeStudent(Student student, StudentList list)
+  public void removeStudent(Student student, StudentList list)
   {
     list.removeStudent(student);
   }
 
-  public static void addLesson(Lesson lesson, Schedule schedule)
+  public void addLesson(Lesson lesson, Schedule schedule)
   {
     schedule.addLesson(lesson);
   }
 
-  public static void removeLesson(Lesson lesson, Schedule schedule)
+  public void removeLesson(Lesson lesson, Schedule schedule)
   {
     schedule.removeLesson(lesson);
   }
