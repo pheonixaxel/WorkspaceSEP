@@ -1,4 +1,3 @@
-
 function readXML(){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
