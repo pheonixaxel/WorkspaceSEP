@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Student/Student.iml" filepath="$PROJECT_DIR$/Student/Student.iml" />
       <module fileurl="file://$PROJECT_DIR$/WorkspaceSEP.iml" filepath="$PROJECT_DIR$/WorkspaceSEP.iml" />
     </modules>
   </component>

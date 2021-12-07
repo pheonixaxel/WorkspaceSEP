@@ -16,7 +16,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ScheduleController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScheduleController">
    <children>
       <MenuBar>
          <menus>
@@ -116,12 +117,12 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="removeButtonSchedule" mnemonicParsing="false" text="Remove">
+            <Button fx:id="removeButtonSchedule" mnemonicParsing="false" onAction="#handleActions" text="Remove">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="goBackSchedule" mnemonicParsing="false" text="Go Back" />
+            <Button fx:id="goBackSchedule" mnemonicParsing="false" onAction="#handleActions" text="Go Back" />
          </children>
       </HBox>
    </children>
