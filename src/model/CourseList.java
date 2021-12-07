@@ -13,13 +13,17 @@ public class CourseList
   {
     return courses;
   }
-  public Course getCourse(int index)
-  {
-    return courses.get(index);
-  }
   public void addCourse(Course course)
   {
     courses.add(course);
+  }
+  public Course getCourse(String id)
+  {
+    for(int i=0;i< courses.size();i++)
+    {
+      if(courses.get(i).getId().equals(id))return courses.get(i);
+    }
+    return null;
   }
   public boolean contains(Course course)
   {
@@ -29,7 +33,7 @@ public class CourseList
     }
     return false;
   }
-  public Course getCourse(Course course)//DELETE THIS COMMENT
+  public Course getCourse(Course course)
   {
     return courses.get(courses.indexOf(course));
   }

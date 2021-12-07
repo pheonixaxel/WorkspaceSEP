@@ -6,9 +6,9 @@ public class TeacherList
 {
   private ArrayList<Teacher> teachers;
 
-  public TeacherList(ArrayList<Teacher> teachers)
+  public TeacherList()
   {
-    this.teachers = teachers;
+    teachers = new ArrayList<Teacher>();
   }
 
   public ArrayList<Teacher> getAllTeachers()

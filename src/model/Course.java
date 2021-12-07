@@ -17,6 +17,8 @@ public class Course
     this.id=id;
     this.semester=semester;
     rooms = new ArrayList<Room>();
+    students = new StudentList();
+    teachers = new TeacherList();
   }
 
   public int getEcts()

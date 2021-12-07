@@ -32,9 +32,9 @@ public class Class
     return semester;
   }
 
-  public Course getCourse(int index)
+  public Course getCourse(String id)
   {
-    return courses.getCourse(index);
+    return courses.getCourse(id);
   }
 
   public boolean contains(Course course)
