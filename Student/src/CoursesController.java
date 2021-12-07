@@ -1,4 +1,5 @@
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -42,7 +43,9 @@ public class CoursesController
     return root;
   }
 
-  public void handleActions(ActionEvent e)
+  private class MyActionListener implements EventHandler<ActionEvent>
+  {
+  public void handle(ActionEvent e)
   {
     if(e.getSource() == addButtonCourses)
     {
@@ -56,6 +59,9 @@ public class CoursesController
     {
       viewHandler.openView("StudentGUI");
     }
+  }
+
+
   }
 
   public void addStudent(TextField studentsNameFieldCourses, TextField studentsIdFieldCourses)
