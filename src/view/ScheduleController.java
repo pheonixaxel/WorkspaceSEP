@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.*;
+import model.Class;
 
 public class ScheduleController {
 
@@ -87,8 +88,8 @@ public class ScheduleController {
                     new Date(dateChoiceSchedule.getValue().getDayOfMonth(), dateChoiceSchedule.getValue().getMonthValue(), dateChoiceSchedule.getValue().getYear()),
                     new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
                     new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
-
-    modelManager.addLesson(lesson);
+    Class clas = new Class(Integer.parseInt((String) semesterChoiceSchedule.getValue()),classChoiceSchedule.getValue().toString());
+    modelManager.addLesson(lesson,clas);
     System.out.println(lesson.toString());
   }
 
@@ -104,7 +105,7 @@ public class ScheduleController {
     beginMinutesSchedule.setText("");
     endHourSchedule.setText("");
     endMinutesSchedule.setText("");
-    textAreaSchedule.setText("");
+    //textAreaSchedule.setText("");
     beginHourSchedule.setText("");
   }
   

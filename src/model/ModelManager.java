@@ -19,13 +19,11 @@ import utils.*;
 
 public class ModelManager
 {
-  private Schedule schedule;
   private ClassList classList;
   public static final String filePath = "schedule.xml";
 
   public ModelManager()
   {
-    schedule = new Schedule();
     classList = new ClassList();
   }
 
@@ -44,21 +42,21 @@ public class ModelManager
     list.removeStudent(student);
   }
 
-  public void addLesson(Lesson lesson)
+  public void addLesson(Lesson lesson, Class clas)
   {
-    schedule.addLesson(lesson);
+    clas.getSchedule().addLesson(lesson);
   }
 
-  public void removeLesson(Lesson lesson)
+  public void removeLesson(Lesson lesson, Class clas)
   {
-    schedule.removeLesson(lesson);
+    clas.getSchedule().removeLesson(lesson);
   }
 
-  public void saveSchedule()
+  public void saveSchedule(Class clas)
   {
     try
     {
-      MyFileHandler.appendToTextFile("schedule.txt", schedule.toString());
+      MyFileHandler.appendToTextFile("schedule.txt", clas.getSchedule().toString());
     }
     catch (FileNotFoundException e)
     {
@@ -66,11 +64,11 @@ public class ModelManager
     }
   }
 
-  public void createSchedule()
+  public void createSchedule(Class clas)
   {
     try
     {
-      MyFileHandler.writeToTextFile("schedule.txt", schedule.toString());
+      MyFileHandler.writeToTextFile("schedule.txt", clas.getSchedule().toString());
     }
     catch (FileNotFoundException e)
     {
@@ -79,14 +77,14 @@ public class ModelManager
 
   }
 
-  public ArrayList<Lesson> getAllLessons()
+  public ArrayList<Lesson> getAllLessons(Class clas)
   {
-    return schedule.getAllLessons();
+    return clas.getSchedule().getAllLessons();
   }
 
-  public ArrayList<Lesson> getLessonsForDate(String date)
+  public ArrayList<Lesson> getLessonsForDate(String date,Class clas)
   {
-    return schedule.getLessonsForDate(date);
+    return clas.getSchedule().getLessonsForDate(date);
   }
 
   public static void saveSchedule(Schedule schedule)

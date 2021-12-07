@@ -6,6 +6,7 @@ public class Class
   private String id;
   private int semester;
   private CourseList courses;
+  private Schedule schedule;
 
   public Class(int semester,String id)
   {
@@ -13,6 +14,12 @@ public class Class
     this.semester=semester;
     students=new StudentList();
     courses=new CourseList();
+    schedule=new Schedule();
+  }
+
+  public Schedule getSchedule()
+  {
+    return schedule;
   }
 
   public StudentList getStudents()
