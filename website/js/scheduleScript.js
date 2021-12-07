@@ -20,7 +20,7 @@ function showData(xml){
         let lessons = days[i].getElementsByTagName("lesson");
         for(let j=0;j<lessons.length;j++)
         {
-            if(i==0)array[j+1]+="<tr>";
+            if(i==0)array[j+1]="<tr>";
             array[j+1]+="<td class='scheduleCell'>"+
             lessons[j].getElementsByTagName("beginTime")[0].childNodes[0].nodeValue+"-"+
             lessons[j].getElementsByTagName("endTime")[0].childNodes[0].nodeValue+"<br>"+
@@ -30,7 +30,11 @@ function showData(xml){
             if(i==days.length-1)array[j+1]+="</tr>";
         }
     }
-    for(let i=0;i<array.length;i++)table+=array[i];
+    for(let i=0;i<array.length;i++)
+    {
+        console.log(array[i]);
+        table+=array[i];
+    }
     document.getElementById("scheduleTable").innerHTML=table;
 }
 

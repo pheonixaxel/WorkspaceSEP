@@ -28,6 +28,17 @@
             <beginTime>8:20</beginTime>
             <endTime>11:45</endTime>
         </lesson>
+    </day>
+
+    <day>
+        <lesson>
+            
+            <id>SDJ</id>
+            <teacher>ALHE</teacher>
+            <room>C05.15</room>
+            <beginTime>8:20</beginTime>
+            <endTime>11:45</endTime>
+        </lesson>
         <lesson>
             
             <id>SEP</id>
@@ -52,27 +63,6 @@
     <day>
         <lesson>
             
-            <id>SDJ</id>
-            <teacher>ALHE</teacher>
-            <room>C05.15</room>
-            <beginTime>8:20</beginTime>
-            <endTime>11:45</endTime>
-        </lesson>
-    </day>
-
-    <day>
-        <lesson>
-            
-            <id>SDJ</id>
-            <teacher>ALHE</teacher>
-            <room>C05.15</room>
-            <beginTime>8:20</beginTime>
-            <endTime>11:45</endTime>
-        </lesson>
-    </day>
-    <day>
-        <lesson>
-
             <id>SDJ</id>
             <teacher>ALHE</teacher>
             <room>C05.15</room>
