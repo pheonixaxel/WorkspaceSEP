@@ -15,14 +15,14 @@ import org.w3c.dom.Element;
 
 public class ModelManager
 {
-  private String fileName;
   private Schedule schedule;
   private ClassList classList;
   public static final String filePath = "schedule.xml";
 
-  public ModelManager(String fileName)
+  public ModelManager()
   {
-    this.fileName = fileName;
+    schedule = new Schedule();
+    classList = new ClassList();
   }
 
   public ArrayList<Class> getAllClasses()
