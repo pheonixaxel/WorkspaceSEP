@@ -16,6 +16,11 @@ public class Class
     courses=new CourseList();
   }
 
+  public StudentList getStudents()
+  {
+    return students;
+  }
+
   public int getSemester()
   {
     return semester;
