@@ -50,29 +50,24 @@ public class ClassesController
   {
     if(e.getSource() == addButtonClasses)
     {
-      ArrayList<Class> classes = modelManager.getAllClasses();
-      StudentList studentList = new StudentList();
-      for(int i=0;i<classes.size();i++)
-      {
-        if(classes.get(i).getId().equals(classChoiceClasses.getSelectionModel().getSelectedItem().toString()) && classes.get(i).getSemester() == Integer.parseInt(semesterChoiceClasses.getSelectionModel().getSelectedItem().toString()))
-        studentList = classes.get(i).getStudents();
-      }
-      modelManager.addStudent(new Student(studentsNameFieldClasses.getText(),Integer.parseInt(studentsIdFieldClasses.getText())), studentList);
+      addStudent(studentsNameFieldClasses,studentsIdFieldClasses);
     }
     if(e.getSource() == removeButtonClasses)
     {
-      ArrayList<Class> classes = modelManager.getAllClasses();
-      StudentList studentList = new StudentList();
-      for(int i=0;i<classes.size();i++)
-      {
-        if(classes.get(i).getId().equals(classChoiceClasses.getSelectionModel().getSelectedItem().toString()) && classes.get(i).getSemester() == Integer.parseInt(semesterChoiceClasses.getSelectionModel().getSelectedItem().toString()))
-          studentList = classes.get(i).getStudents();
-      }
-      modelManager.removeStudent(new Student(studentsNameFieldClasses.getText(),Integer.parseInt(studentsIdFieldClasses.getText())), studentList);
+      removeStudent(studentsNameFieldClasses,studentsIdFieldClasses);
     }
     if(e.getSource() == goBackButtonClasses)
     {
       viewHandler.openView("StudentGUI");
     }
+  }
+
+  public void addStudent(TextField studentsNameFieldClasses, TextField studentsIdFieldClasses)
+  {
+
+  }
+  public void removeStudent(TextField studentsNameFieldClasses,TextField studentsIdFieldClasses)
+  {
+
   }
 }

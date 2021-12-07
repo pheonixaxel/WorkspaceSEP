@@ -40,12 +40,12 @@ public class ModelManager
     list.removeStudent(student);
   }
 
-  public void addLesson(Lesson lesson, Schedule schedule)
+  public void addLesson(Lesson lesson)
   {
     schedule.addLesson(lesson);
   }
 
-  public void removeLesson(Lesson lesson, Schedule schedule)
+  public void removeLesson(Lesson lesson)
   {
     schedule.removeLesson(lesson);
   }
@@ -75,12 +75,12 @@ public class ModelManager
 
   }
 
-  public ArrayList<Lesson> getAllLessons(Schedule schedule)
+  public ArrayList<Lesson> getAllLessons()
   {
     return schedule.getAllLessons();
   }
 
-  public ArrayList<Lesson> getLessonsForDate(String date, Schedule schedule)
+  public ArrayList<Lesson> getLessonsForDate(String date)
   {
     return schedule.getLessonsForDate(date);
   }
