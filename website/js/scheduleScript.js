@@ -14,21 +14,24 @@ function showData(xml){
     let xmlDoc = xml.responseXML;
     let table = "";
     let days = xmlDoc.getElementsByTagName("day");
+    let array = [];
+    array[0]="<tr><td class='scheduleHead'>Monday</td><td class='scheduleHead'>Tuesday</td><td class='scheduleHead'>Wednesday</td><td class='scheduleHead'>Thursday</td><td class='scheduleHead'>Friday</td></tr>"
     for(let i=0;i<days.length;i++)
     {
-        table+="<tr><td class='scheduleHead'>Monday</td>";
         let lessons = days[i].getElementsByTagName("lesson");
         for(let j=0;j<lessons.length;j++)
         {
-            table+="<td class='scheduleCell'>"+
+            if(i==0)array[j+1]+="<tr>";
+            array[j+1]+="<td class='scheduleCell'>"+
             lessons[j].getElementsByTagName("beginTime")[0].childNodes[0].nodeValue+"-"+
             lessons[j].getElementsByTagName("endTime")[0].childNodes[0].nodeValue+"<br>"+
             lessons[j].getElementsByTagName("id")[0].childNodes[0].nodeValue+", "+
             lessons[j].getElementsByTagName("teacher")[0].childNodes[0].nodeValue+"<br>"+
             lessons[j].getElementsByTagName("room")[0].childNodes[0].nodeValue+"</td>";
+            if(i==days.length-1)array[j+1]+="</tr>";
         }
-        table+="</tr>";
     }
+    for(let i=0;i<array.length;i++)table+=array[i];
     document.getElementById("scheduleTable").innerHTML=table;
 }
 
