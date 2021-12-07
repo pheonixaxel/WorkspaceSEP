@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+body{
+
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:black;
+}
+h2{
+    position: relative;
+    text-align: right;
+}
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    border:1px solid white;
+
+}
+

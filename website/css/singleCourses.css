@@ -1,0 +1,140 @@
+body, html {
+    height:100%;
+    margin: 0;
+}
+.bg-image {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image: url("https://data.1freewallpapers.com/detail/dark-cubes-glow-computer-graphics-free.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.fa {
+    margin: 2px;
+    padding: 10px;
+    font-size: 15px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40%;
+}
+.fa:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+
+.container{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.col-md-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999da1;
+    font-size: 3rem;
+}
+
+.teacherText {
+    border: 0.5rem;
+    border-style: solid;
+    border-color: yellow;
+    background-color: black;
+    padding: 1rem;
+    margin-top: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    float: right;
+}
+
+.col {
+    margin-top: 0;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.infoBoxPrerequisites {
+    background-color: yellow;
+    width: 50%;
+}
+
+.infoBoxExam{
+    background-color: grey;
+    width: 50%;
+}
+
+.infoBoxes {
+    position: relative;
+    bottom: 0;
+    min-height: 20vh;
+}
+
+@media (min-width: 950px) {
+
+    .teacherImg {
+        margin: auto;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .backgroundImg {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background-image: url("../images/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+    }
+
+    .teacherText {
+        border: 0.5rem;
+        border-style: solid;
+        border-color: yellow;
+        background-color: black;
+        padding: 0.5rem;
+        margin-top: 0;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        float: right;
+    }
+
+}
+.main-bottom{
+    position: absolute;
+    bottom:0%;
+    height:50%;
+    width:100%;
+}
+.main-right{
+    background-color: #c4c4c4;
+}
+.main-left{
+    background-color:yellow;
+}
+.main-img{
+    position: absolute;
+    top:-20%;
+    margin-left: 15%;
+    margin-right: 15%;
+    max-width: 75%;
+    max-height: 75%;
+}

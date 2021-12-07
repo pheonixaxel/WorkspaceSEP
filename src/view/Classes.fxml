@@ -19,7 +19,7 @@
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="view.ClassesController">
+      fx:controller="ClassesController">
     <children>
         <MenuBar>
             <menus>
@@ -68,7 +68,7 @@
                                contentDisplay="CENTER" text="Semester:"/>
                         <ChoiceBox fx:id="semesterChoiceClasses"
                                    prefWidth="150.0" GridPane.columnIndex="1"/>
-                        <Label fx:id="classLabelClasses" text="model.Class:"
+                        <Label fx:id="classLabelClasses" text="Class:"
                                GridPane.rowIndex="1"/>
                         <ChoiceBox fx:id="classChoiceClasses" prefWidth="150.0"
                                    GridPane.columnIndex="1"
