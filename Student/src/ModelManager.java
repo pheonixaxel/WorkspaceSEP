@@ -15,31 +15,37 @@ import org.w3c.dom.Element;
 
 public class ModelManager
 {
-  private String fileName;
   private Schedule schedule;
+  private ClassList classList;
   public static final String filePath = "schedule.xml";
 
-  public ModelManager(String fileName)
+  public ModelManager()
   {
-    this.fileName = fileName;
+    schedule = new Schedule();
+    classList = new ClassList();
   }
 
-  public static void addStudent(Student student, StudentList list)
+  public ArrayList<Class> getAllClasses()
+  {
+    return classList.getAllClasses();
+  }
+
+  public void addStudent(Student student, StudentList list)
   {
     list.addStudent(student);
   }
 
-  public static void removeStudent(Student student, StudentList list)
+  public void removeStudent(Student student, StudentList list)
   {
     list.removeStudent(student);
   }
 
-  public static void addLesson(Lesson lesson, Schedule schedule)
+  public void addLesson(Lesson lesson)
   {
     schedule.addLesson(lesson);
   }
 
-  public static void removeLesson(Lesson lesson, Schedule schedule)
+  public void removeLesson(Lesson lesson)
   {
     schedule.removeLesson(lesson);
   }
@@ -69,12 +75,12 @@ public class ModelManager
 
   }
 
-  public ArrayList<Lesson> getAllLessons(Schedule schedule)
+  public ArrayList<Lesson> getAllLessons()
   {
     return schedule.getAllLessons();
   }
 
-  public ArrayList<Lesson> getLessonsForDate(String date, Schedule schedule)
+  public ArrayList<Lesson> getLessonsForDate(String date)
   {
     return schedule.getLessonsForDate(date);
   }

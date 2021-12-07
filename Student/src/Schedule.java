@@ -4,7 +4,6 @@ import javafx.scene.control.ChoiceBox;
 
 public class Schedule
 {
-  @FXML private ChoiceBox semesterChoiceSchedule;
   private ArrayList<Lesson> lessons;
 
   public Schedule()
