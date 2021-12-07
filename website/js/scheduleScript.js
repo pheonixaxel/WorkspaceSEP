@@ -27,7 +27,7 @@ function showData(xml){
             lessons[j].getElementsByTagName("teacher")[0].childNodes[0].nodeValue+"<br>"+
             lessons[j].getElementsByTagName("room")[0].childNodes[0].nodeValue+"</td>";
         }
-        table+="</tr>"
+        table+="</tr>";
     }
     document.getElementById("scheduleTable").innerHTML=table;
 }
