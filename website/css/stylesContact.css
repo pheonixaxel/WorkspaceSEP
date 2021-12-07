@@ -1,0 +1,34 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+
+
+.rounded-circle
+{
+    width: 150px;
+	height:150px; 
+
+}
+.bg-image {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image: url("https://images.wallpaperscraft.com/image/single/hand_mouse_keyboard_143632_3840x2160.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.icons
+{
+    width: 30px;
+    height: 30px;
+   
+}
+.text-warning
+{
+    color: yellow;
+}

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+body{
+    font-family: Mitr;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:white;
+}
+h2{
+    position: relative;
+    text-align: right;
+}
+h1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    border:1px solid white;
+    border-collapse: collapse;
+}
+
+table {
+    table-layout: fixed ;
+    width: 100% ;
+    position: absolute;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid white;
+    border-collapse: collapse;
+}
+
+.weekDays {
+    height: 50px;
+    border: 5px solid white;
+    border-collapse: collapse;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.hours {
+    border: 5px solid white;
+    border-collapse: collapse;
+    font-weight: bold;
+}
+.lunchBreak {
+    height: 40px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+}
+.objects {
+    height: 160px;
+    border: 3px solid;
+}
+#top {
+    display: flex;
+}
+
+a:visited {
+    color: white;
+}
+a:hover {
+    text-decoration: aquamarine;
+}

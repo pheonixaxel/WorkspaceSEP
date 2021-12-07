@@ -64,7 +64,7 @@ public class ViewHandler
 
     private Region loadStudentsGUI()
     {
-        if(studentsGUIController == null)
+        if(studentsGUIController != null)
         {
             try
             {

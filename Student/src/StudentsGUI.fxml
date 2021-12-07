@@ -51,8 +51,8 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button fx:id="coursesButtonMain" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #C7DDEF;" text="Courses" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                  <Button fx:id="scheduleButtonMain" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #FCD5C5;" text="Schedule" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="coursesButtonMain" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleActions" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #C7DDEF;" text="Courses" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                  <Button fx:id="scheduleButtonMain" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleActions" prefHeight="80.0" prefWidth="130.0" style="-fx-background-color: #FCD5C5;" text="Schedule" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
                   <ImageView fx:id="logoViaMain" fitHeight="108.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <image>
                         <Image url="@../../../logo_via1.png" />
