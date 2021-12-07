@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ScheduleController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ScheduleController">
    <children>
       <MenuBar>
          <menus>
@@ -60,7 +60,7 @@
                   <ChoiceBox fx:id="courseChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <ChoiceBox fx:id="teacherFirstChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Label fx:id="teacherSecondLabelSchedule" text="Teacher 2.:" GridPane.rowIndex="4" />
-                  <ChoiceBox fx:id="teacherSecoundChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox fx:id="teacherSecondChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Label fx:id="roomLabelSchedule" text="Room:" GridPane.rowIndex="5" />
                   <ChoiceBox fx:id="roomChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <DatePicker fx:id="dateChoiceSchedule" GridPane.columnIndex="1" GridPane.rowIndex="6" />
@@ -111,17 +111,17 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="43.0" prefWidth="600.0">
          <children>
-            <Button fx:id="addButtonSchedule" mnemonicParsing="false" text="Add">
+            <Button fx:id="addButtonSchedule" mnemonicParsing="false" onAction="#handleActions" text="Add">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="removeButtonSchedule" mnemonicParsing="false" text="Remove">
+            <Button fx:id="removeButtonSchedule" mnemonicParsing="false" onAction="#handleActions" text="Remove">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="goBackSchedule" mnemonicParsing="false" text="Go Back" />
+            <Button fx:id="goBackSchedule" mnemonicParsing="false" onAction="#handleActions" text="Go Back" />
          </children>
       </HBox>
    </children>

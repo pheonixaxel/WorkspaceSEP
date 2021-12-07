@@ -49,7 +49,16 @@ public class StudentsGUIController
 
     public void handleActions(ActionEvent event) throws IOException {
         if (event.getSource() == scheduleButtonMain) {
-            Parent root = FXMLLoader.load(getClass().getResource("Schedule.fxml"));
+            Parent root;
+            root = FXMLLoader.load(getClass().getResource("Schedule.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if (event.getSource() == classesButtonMain)
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("Classes.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

@@ -89,6 +89,7 @@ public class ScheduleController {
                     new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
 
     modelManager.addLesson(lesson);
+    System.out.println(lesson.toString());
   }
 
   public void clearFields()
