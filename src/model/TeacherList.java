@@ -22,6 +22,15 @@ public class TeacherList implements Serializable
     return teachers.get(index);
   }
 
+  public Teacher getTeacher(String initials)
+  {
+    for(int i=0;i<teachers.size();i++)
+    {
+      if(teachers.get(i).getInitials().equals(initials))return teachers.get(i);
+    }
+    return null;
+  }
+
   public void addTeacher(Teacher teacher)
   {
     teachers.add(teacher);

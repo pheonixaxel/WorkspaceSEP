@@ -118,12 +118,14 @@ public class ScheduleController {
 
   public void addLesson()
   {
+    ClassList classList = modelManager.getAllClasses();
     Lesson lesson = new Lesson(new Clock(Integer.parseInt(beginHourSchedule.getText()), Integer.parseInt(beginMinutesSchedule.getText())),
             new Date(dateChoiceSchedule.getValue().getDayOfMonth(), dateChoiceSchedule.getValue().getMonthValue(), dateChoiceSchedule.getValue().getYear()),
             new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
-            new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
-
-    //modelManager.addLesson(lesson);
+            new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()),
+            classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()).getCourse(courseChoiceSchedule.getValue().toString()).getAllTeachers().getTeacher(teacherFirstChoiceSchedule.getValue().toString()));
+    modelManager.addLesson(lesson,classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
+    modelManager.saveSchedule(classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
     System.out.println(lesson);
   }
 

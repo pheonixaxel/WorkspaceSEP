@@ -97,6 +97,11 @@ public class Course implements Serializable
 
   public String toString()
   {
-    return semester+","+ id +"," + teachers + "," + rooms + ",";
+    String rtrn=semester+","+ id +",";
+    for(int i=0;i<rooms.size();i++)
+    {
+      rtrn += rooms.get(i).toString()+" ";
+    }
+    return rtrn;
   }
 }

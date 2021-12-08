@@ -40,6 +40,6 @@ public class Room implements Serializable
 
   public String toString()
   {
-    return id + " ";
+    return id;
   }
 }

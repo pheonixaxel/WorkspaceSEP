@@ -8,13 +8,15 @@ public class Lesson
   private Clock endTime;
   private Date date;
   private Course course;
+  private Teacher teacher;
 
-  public Lesson(Clock beginTime ,Date date,Clock endTime, Course course)
+  public Lesson(Clock beginTime ,Date date,Clock endTime, Course course, Teacher teacher)
   {
     this.beginTime = beginTime.copy();
     this.endTime = endTime.copy();
     this.date = date.copy();
     this.course = course;
+    this.teacher = teacher;
   }
 
   public void setBeginTime(Clock beginTime)
@@ -40,6 +42,16 @@ public class Lesson
   public Course getCourse()
   {
     return course;
+  }
+
+  public Teacher getTeacher()
+  {
+    return teacher;
+  }
+
+  public void setTeacher(Teacher teacher)
+  {
+    this.teacher = teacher;
   }
 
   public void setCourse(Course course)
@@ -70,6 +82,6 @@ public class Lesson
 
   public String toString()
   {
-    return course + "," + beginTime + "," + endTime + "," + date;
+    return course + ","+ teacher+ "," + beginTime + "," + endTime + "," + date;
   }
 }

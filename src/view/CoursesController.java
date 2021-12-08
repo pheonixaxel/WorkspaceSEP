@@ -13,7 +13,7 @@ public class CoursesController
 {
   private Region root;
   private  ModelManager modelManager;
-  private ViewHandler viewHandler;
+  //private ViewHandler viewHandler;
 
   @FXML ChoiceBox semesterChoiceCourses;
   @FXML ChoiceBox courseChoiceCourses;
@@ -23,14 +23,14 @@ public class CoursesController
   @FXML Button removeButtonCourses;
   @FXML Button goBackButtonCourses;
 
-  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
+  /*public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
     this.root=root;
     this.viewHandler= viewHandler;
     reset();
   }
-
+*/
   public void reset()
   {
     if(modelManager!=null) updateCourses();
@@ -59,7 +59,7 @@ public class CoursesController
       }
       if(e.getSource()==goBackButtonCourses)
       {
-        viewHandler.openView("StudentGUI");
+   //     viewHandler.openView("StudentGUI");
       }
     }
 

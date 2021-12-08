@@ -120,10 +120,5 @@
             <Button fx:id="goBackSchedule" mnemonicParsing="false" onAction="#handleActions" text="Go Back" />
          </children>
       </HBox>
-      <HBox prefHeight="34.0" prefWidth="600.0">
-         <children>
-            <Button fx:id="saveButtonSchedule" mnemonicParsing="false" prefHeight="9.0" prefWidth="90.0" text="Save" />
-         </children>
-      </HBox>
    </children>
 </VBox>
