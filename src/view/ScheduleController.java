@@ -27,6 +27,7 @@ public class ScheduleController {
   @FXML private Button addButtonSchedule;
   @FXML private Button removeButtonSchedule;
   @FXML private Button goBackSchedule;
+  @FXML private Button refreshButtonSchedule;
 
   @FXML private ListView listViewSchedule;
 
@@ -85,14 +86,13 @@ public class ScheduleController {
     if (e.getSource() == addButtonSchedule)
     {
       System.out.println("clicked!");
-
-      String value = "";
+      /*String value = "";
       value += semesterChoiceSchedule.getValue() + ", " + classChoiceSchedule.getValue() + ", " + courseChoiceSchedule.getValue()
               + ", " + teacherFirstChoiceSchedule.getValue() + ", " + teacherSecondChoiceSchedule.getValue()
               + ", " + roomChoiceSchedule.getValue() + ", " + dateChoiceSchedule.getValue() + ", " + beginHourSchedule.getText() + " : " + beginMinutesSchedule.getText()
               + ", " + endHourSchedule.getText() + " : " + endMinutesSchedule.getText() + "\n";
 
-      listViewSchedule.getItems().addAll(value);
+      listViewSchedule.getItems().addAll(value);*/
       addLesson();
     }
 
@@ -114,18 +114,36 @@ public class ScheduleController {
       stage.setScene(scene);
       stage.show();
     }
+    else if(e.getSource() == refreshButtonSchedule)
+    {
+      updateListView();
+    }
+  }
+
+  public void updateListView()
+  {
+    listViewSchedule.getItems().clear();
+    String filePath = "schedule"+semesterChoiceSchedule.getValue().toString()+classChoiceSchedule.getValue().toString()+".bin";
+    Schedule schedule = modelManager.getScheduleFromFile(filePath);
+    for(int i=0;i<schedule.size();i++)
+    {
+      listViewSchedule.getItems().add(schedule.getLesson(i).toString());
+    }
   }
 
   public void addLesson()
   {
     ClassList classList = modelManager.getAllClasses();
+    RoomList roomList = modelManager.getAllRooms();
     Lesson lesson = new Lesson(new Clock(Integer.parseInt(beginHourSchedule.getText()), Integer.parseInt(beginMinutesSchedule.getText())),
             new Date(dateChoiceSchedule.getValue().getDayOfMonth(), dateChoiceSchedule.getValue().getMonthValue(), dateChoiceSchedule.getValue().getYear()),
             new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
             new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()),
-            classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()).getCourse(courseChoiceSchedule.getValue().toString()).getAllTeachers().getTeacher(teacherFirstChoiceSchedule.getValue().toString()));
+            classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()).getCourse(courseChoiceSchedule.getValue().toString()).getAllTeachers().getTeacher(teacherFirstChoiceSchedule.getValue().toString()),
+            roomList.getRoom(roomChoiceSchedule.getValue().toString()));
     modelManager.addLesson(lesson,classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
     modelManager.saveSchedule(classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
+    updateListView();
     System.out.println(lesson);
   }
 

@@ -2,21 +2,23 @@ package model;
 
 import java.io.Serializable;
 
-public class Lesson
+public class Lesson implements Serializable
 {
   private Clock beginTime;
   private Clock endTime;
   private Date date;
   private Course course;
   private Teacher teacher;
+  private Room room;
 
-  public Lesson(Clock beginTime ,Date date,Clock endTime, Course course, Teacher teacher)
+  public Lesson(Clock beginTime ,Date date,Clock endTime, Course course, Teacher teacher, Room room)
   {
     this.beginTime = beginTime.copy();
     this.endTime = endTime.copy();
     this.date = date.copy();
     this.course = course;
     this.teacher = teacher;
+    this.room = room;
   }
 
   public void setBeginTime(Clock beginTime)
@@ -82,6 +84,6 @@ public class Lesson
 
   public String toString()
   {
-    return course + ","+ teacher+ "," + beginTime + "," + endTime + "," + date;
+    return course + "," + room + "," + teacher + "," + beginTime + "," + endTime + "," + date;
   }
 }

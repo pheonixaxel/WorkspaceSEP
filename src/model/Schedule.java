@@ -45,6 +45,8 @@ public class Schedule implements Serializable
     lessons.remove(lesson);
   }
 
+  public int size(){return lessons.size();}
+
   public boolean equals(Object obj)
   {
     if (!(obj instanceof Schedule))
