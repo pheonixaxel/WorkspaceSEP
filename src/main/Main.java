@@ -9,3 +9,12 @@ public class Main {
 
     }
 }
+
+/* TODO Exceptions
+* Schedule:
+*
+*
+*
+
+
+ */

@@ -37,11 +37,9 @@ public class ClassesController
 
     semesterChoiceClasses.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
     semesterChoiceClasses.setValue("2");
-    ClassList classList = modelManager.getAllClasses();
-    for(int i=0;i<classList.size();i++)
-    {
-      classChoiceClasses.getItems().add(classList.getClass(i).getId());
-    }
+
+    classChoiceClasses.getItems().addAll("X", "Y", "Z", "DK");
+    classChoiceClasses.setValue("X");
 
   }
 
