@@ -6,6 +6,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import model.*;
+import model.Class;
 
 import java.awt.event.ActionEvent;
 
@@ -16,6 +17,7 @@ public class CoursesController
   //private ViewHandler viewHandler;
 
   @FXML ChoiceBox semesterChoiceCourses;
+  @FXML ChoiceBox classChoiceCourses;
   @FXML ChoiceBox courseChoiceCourses;
   @FXML TextField studentsNameFieldCourses;
   @FXML TextField studentsIdFieldCourses;
@@ -31,6 +33,26 @@ public class CoursesController
     reset();
   }
 */
+  public void initialize()
+  {
+    modelManager = new ModelManager();
+
+    semesterChoiceCourses.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
+    semesterChoiceCourses.setValue("2");
+    ClassList classList = modelManager.getAllClasses();
+    for(int i=0;i<classList.size();i++)
+    {
+      classChoiceCourses.getItems().add(classList.getClass(i).getId());
+
+      CourseList courseList = classList.getClass(i).getAllCourses();
+      for(int j=0;j<courseList.size();j++)
+      {
+        if(!courseChoiceCourses.getItems().contains(courseList.getCourse(j).getId()))
+          courseChoiceCourses.getItems().add(courseList.getCourse(j).getId());
+      }
+    }
+  }
+
   public void reset()
   {
     if(modelManager!=null) updateCourses();

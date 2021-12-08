@@ -86,13 +86,6 @@ public class ScheduleController {
     if (e.getSource() == addButtonSchedule)
     {
       System.out.println("clicked!");
-      /*String value = "";
-      value += semesterChoiceSchedule.getValue() + ", " + classChoiceSchedule.getValue() + ", " + courseChoiceSchedule.getValue()
-              + ", " + teacherFirstChoiceSchedule.getValue() + ", " + teacherSecondChoiceSchedule.getValue()
-              + ", " + roomChoiceSchedule.getValue() + ", " + dateChoiceSchedule.getValue() + ", " + beginHourSchedule.getText() + " : " + beginMinutesSchedule.getText()
-              + ", " + endHourSchedule.getText() + " : " + endMinutesSchedule.getText() + "\n";
-
-      listViewSchedule.getItems().addAll(value);*/
       addLesson();
     }
 
@@ -114,6 +107,7 @@ public class ScheduleController {
       stage.setScene(scene);
       stage.show();
     }
+
     else if(e.getSource() == refreshButtonSchedule)
     {
       updateListView();
@@ -122,12 +116,14 @@ public class ScheduleController {
 
   public void updateListView()
   {
+    System.out.println("IT IS CALLED");
     listViewSchedule.getItems().clear();
     String filePath = "schedule"+semesterChoiceSchedule.getValue().toString()+classChoiceSchedule.getValue().toString()+".bin";
     Schedule schedule = modelManager.getScheduleFromFile(filePath);
     for(int i=0;i<schedule.size();i++)
     {
       listViewSchedule.getItems().add(schedule.getLesson(i).toString());
+      System.out.println(schedule.getLesson(i));
     }
   }
 
@@ -143,7 +139,7 @@ public class ScheduleController {
             roomList.getRoom(roomChoiceSchedule.getValue().toString()));
     modelManager.addLesson(lesson,classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
     modelManager.saveSchedule(classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
-    updateListView();
+    //updateListView();
     System.out.println(lesson);
   }
 
