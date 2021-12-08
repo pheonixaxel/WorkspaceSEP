@@ -12,7 +12,7 @@ public class ClassesController
 {
   private Region root;
   private  ModelManager modelManager;
-  private ViewHandler viewHandler;
+  /*private ViewHandler viewHandler;*/
 
   @FXML ChoiceBox semesterChoiceClasses;
   @FXML ChoiceBox classChoiceClasses;
@@ -24,12 +24,14 @@ public class ClassesController
   @FXML Button removeButtonClasses;
   @FXML Button goBackButtonClasses;
 
+/*
   public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.root = root;
   }
+*/
 
   public void initialize()
   {

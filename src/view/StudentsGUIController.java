@@ -15,13 +15,13 @@ import java.io.IOException;
 
 public class StudentsGUIController
 {
-   private Region root1;
+    private Region root1;
     private Parent root;
     private Stage stage;
     private Scene scene;
 
     private ModelManager modelManager;
-    private ViewHandler viewHandler;
+
 
 
 
@@ -30,12 +30,12 @@ public class StudentsGUIController
     @FXML Button scheduleButtonMain;
 
 
-    public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
+ /*   public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
     {
         this.modelManager = modelManager;
         this.root = root;
         this.viewHandler = viewHandler;
-    }
+    }*/
 
     public void reset()
     {
