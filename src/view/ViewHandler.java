@@ -5,10 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import model.ModelManager;
-import view.ClassesController;
-import view.CoursesController;
-import view.ScheduleController;
-import view.StudentsGUIController;
 
 import java.io.IOException;
 
@@ -75,7 +71,8 @@ public class ViewHandler
             try
             {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("view/StudentsGUI.fxml"));
+                loader.setLocation(getClass().getResource(
+                    "view/StudentsGUI.fxml"));
                 Region root = loader.load();
                 studentsGUIController = loader.getController();
                 studentsGUIController.init(this, modelManager, root);

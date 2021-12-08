@@ -25,4 +25,6 @@ public class RoomList implements Serializable
     }
     return null;
   }
+  public Room getRoom(int index){return rooms.get(index);}
+  public int size(){return rooms.size();}
 }

@@ -24,5 +24,7 @@ public class ClassList implements Serializable//delete this comment
     }
     return null;
   }
+  public Class getClass(int index){return classes.get(index);}
   public void addClass(Class clas){classes.add(clas);};//again
+  public int size(){return classes.size();}
 }

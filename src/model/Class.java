@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Class
+public class Class implements Serializable
 {
   private StudentList students;
   private String id;
@@ -18,6 +18,8 @@ public class Class
     courses=new CourseList();
     schedule=new Schedule();
   }
+
+  public CourseList getAllCourses(){return courses;}
 
   public Schedule getSchedule()
   {

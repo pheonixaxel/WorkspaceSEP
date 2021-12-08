@@ -9,8 +9,6 @@ import model.Lesson;
 import model.Class;
 
 public class ScheduleController {
-
-  private ViewHandler viewHandler;
   private Region root;
   private ModelManager modelManager;
 
@@ -32,23 +30,34 @@ public class ScheduleController {
   @FXML private TextField beginHourSchedule;
   @FXML private TextField endMinutesSchedule;
 
-  public void initialize(ViewHandler viewHandler, ModelManager modelManager, Region root)
+  public void initialize(ModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
     this.root = root;
-    this.viewHandler = viewHandler;
   }
 
   public void initialize()
   {
     modelManager = new ModelManager();
     semesterChoiceSchedule.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
+    ClassList classList = modelManager.getAllClasses();
+    for(int i=0;i<classList.size();i++)
+    {
+      classChoiceSchedule.getItems().add(classList.getClass(i).getId());
+    }
+
+
+    /*
+    semesterChoiceSchedule.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
     classChoiceSchedule.getItems().addAll("X", "Y", "Z", "DK");
     courseChoiceSchedule.getItems().addAll("SDJ", "DMA", "RWD", "SEP");
     teacherFirstChoiceSchedule.getItems().addAll("ALHE", "SVA", "KLAB", "MIVI", "AHAN", "MWA");
     teacherSecondChoiceSchedule.getItems().addAll("ALHE", "SVA", "KLAB", "MIVI", "AHAN", "MWA");
     roomChoiceSchedule.getItems().addAll("C05.15,45", "C05.16a,45", "C05.16b,45", "C03.12,20", "C03.13,125");
+    */
   }
+
+
 
   public void handleActions(ActionEvent e)
   {
@@ -91,7 +100,7 @@ public class ScheduleController {
                     new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
                     new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
 
-    modelManager.addLesson(lesson);
+    //modelManager.addLesson(lesson);
     System.out.println(lesson);
   }
 
@@ -109,10 +118,10 @@ public class ScheduleController {
     endMinutesSchedule.setText("");
     beginHourSchedule.setText("");
   }
-  
+
   public void reset()
   {
-    
+
   }
 
 

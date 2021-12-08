@@ -1,6 +1,7 @@
 package model;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
@@ -19,19 +20,31 @@ import util.*;
 
 public class ModelManager
 {
-  private ClassList classList;
-  public static final String filePath = "schedule.xml";
-
-  public ModelManager()
+  public ClassList getAllClasses()
   {
-    classList = new ClassList();
+    ClassList classList = new ClassList();
+
+    try{
+      classList = (ClassList) MyFileHandler.readFromBinaryFile("classes.bin");
+    }
+    catch(FileNotFoundException e){System.out.println("File was not found");}
+    catch(IOException e){System.out.println(e.getMessage());}
+    catch(ClassNotFoundException e){System.out.println("Class not found");}
+    return classList;
   }
 
-  public ArrayList<Class> getAllClasses()
+  public RoomList getAllRooms()
   {
-    return classList.getAllClasses();
-  }
+    RoomList roomList = new RoomList();
 
+    try{
+      roomList = (RoomList) MyFileHandler.readFromBinaryFile("rooms.bin");
+    }
+    catch(FileNotFoundException e){System.out.println("File was not found");}
+    catch(IOException e){System.out.println("IO Exception");}
+    catch(ClassNotFoundException e){System.out.println("Class not found");}
+    return roomList;
+  }
   public void addStudent(Student student, StudentList list)
   {
     list.addStudent(student);
@@ -64,17 +77,13 @@ public class ModelManager
     }
   }
 
-  public void createSchedule(Class clas)
+  public void saveClasses(ClassList classList)
   {
-    try
-    {
-      MyFileHandler.writeToTextFile("schedule.txt", clas.getSchedule().toString());
+    try{
+    MyFileHandler.writeToBinaryFile("classes.bin",classList);
     }
-    catch (FileNotFoundException e)
-    {
-      System.out.println("File was not found, or could not be opened");
-    }
-
+    catch(FileNotFoundException e){System.out.println("File was not found");}
+    catch(IOException e){System.out.println(e.getMessage());}
   }
 
   public ArrayList<Lesson> getAllLessons(Class clas)
@@ -87,8 +96,9 @@ public class ModelManager
     return clas.getSchedule().getLessonsForDate(date);
   }
 
-  public static void saveSchedule(Schedule schedule)
+  public static void sendSchedule(Class clas)
   {
+    String filePath = "schedule"+clas.getSemester()+ clas.getId();
     try
     {
       // We create the necessary object to be able to create an .xml file
@@ -100,7 +110,7 @@ public class ModelManager
       Element root = document.createElement("schedule");
 
       // We proceed to go through all lessons and add them to the document
-      ArrayList<Lesson> lessons = schedule.getAllLessons();
+      ArrayList<Lesson> lessons = clas.getSchedule().getAllLessons();
       Element days[] = new Element[5];
       ArrayList<Element> elements = new ArrayList<Element>();
       Clock prev = new Clock(0,0);

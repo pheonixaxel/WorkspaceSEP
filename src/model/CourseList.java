@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-public class CourseList
+public class CourseList implements Serializable
 {
   private ArrayList<Course> courses;
 
@@ -10,10 +10,7 @@ public class CourseList
   {
     courses=new ArrayList<Course>();
   }
-  public ArrayList<Course> getAllCourses()
-  {
-    return courses;
-  }
+  public int size(){return courses.size();}
   public void addCourse(Course course)
   {
     courses.add(course);
@@ -26,6 +23,7 @@ public class CourseList
     }
     return null;
   }
+  public Course getCourse(int index){return courses.get(index);}
   public boolean contains(Course course)
   {
     for(int i=0;i<courses.size();i++)

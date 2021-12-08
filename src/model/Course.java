@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Course
+public class Course implements Serializable
 {
   private String id;
   private int semester;
@@ -67,14 +67,14 @@ public class Course
     return rooms;
   }
 
-  public ArrayList<Student> getAllStudents()
+  public StudentList getAllStudents()
   {
-    return students.getAllStudents();
+    return students;
   }
 
-  public ArrayList<Teacher> getAllTeachers()
+  public TeacherList getAllTeachers()
   {
-    return teachers.getAllTeachers();
+    return teachers;
   }
 
   public Course copy()
