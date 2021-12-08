@@ -24,5 +24,5 @@ public class ClassList implements Serializable//delete this comment
     }
     return null;
   }
-  public void addClass(Class clas){classes.add(clas);};
+  public void addClass(Class clas){classes.add(clas);};//again
 }
