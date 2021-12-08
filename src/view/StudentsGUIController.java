@@ -56,13 +56,21 @@ public class StudentsGUIController
             stage.setScene(scene);
             stage.show();
         }
-        else if (event.getSource() == classesButtonMain)
+        if (event.getSource() == classesButtonMain)
         {
             Parent root = FXMLLoader.load(getClass().getResource("Classes.fxml"));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        }
+        if(event.getSource() == coursesButtonMain)
+        {
+          Parent root = FXMLLoader.load(getClass().getResource("Courses.fxml"));
+          stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+          scene = new Scene(root);
+          stage.setScene(scene);
+          stage.show();
         }
     }
     /*

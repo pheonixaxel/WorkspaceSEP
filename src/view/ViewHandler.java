@@ -121,7 +121,7 @@ public class ViewHandler
                 loader.setLocation(getClass().getResource("view/Classes.fxml"));
                 Region root = loader.load();
                 classesController = loader.getController();
-                classesController.init(this, modelManager, root);
+                classesController.initialize();
             }
             catch (IOException e)
             {
