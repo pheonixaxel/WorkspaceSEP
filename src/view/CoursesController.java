@@ -39,7 +39,7 @@ public class CoursesController
 
     semesterChoiceCourses.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
     semesterChoiceCourses.setValue("2");
-    ClassList classList = modelManager.getAllClasses();//
+    ClassList classList = modelManager.getAllClasses();
     for(int i=0;i<classList.size();i++)
     {
       classChoiceCourses.getItems().add(classList.getClass(i).getId());
