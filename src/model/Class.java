@@ -12,7 +12,7 @@ public class Class implements Serializable
 
   public Class(int semester,String id)
   {
-    this.id = id;
+    this.id = id;//DELETE THIS COMMENT
     this.semester=semester;
     students=new StudentList();
     courses=new CourseList();
