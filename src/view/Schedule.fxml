@@ -5,10 +5,10 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -54,7 +54,7 @@
                   <Label fx:id="semesterLabelSchedule" alignment="CENTER" contentDisplay="CENTER" text="Semester:" />
                   <ChoiceBox fx:id="semesterChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" />
                   <Label fx:id="classLabelSchedule" text="Class:" GridPane.rowIndex="1" />
-                  <ChoiceBox fx:id="classChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ChoiceBox fx:id="classChoiceSchedule" prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Label fx:id="teacherFirstLabelSchedule" text="Teacher 1.:" GridPane.rowIndex="3" />
                   <Label fx:id="courseLabelSchedule" text="Course:" GridPane.rowIndex="2" />
                   <ChoiceBox fx:id="courseChoiceSchedule" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -102,11 +102,7 @@
                   <Insets left="10.0" />
                </padding>
             </GridPane>
-            <TextArea fx:id="textAreaSchedule" prefHeight="374.0" prefWidth="268.0">
-               <HBox.margin>
-                  <Insets left="30.0" />
-               </HBox.margin>
-            </TextArea>
+            <ListView fx:id="listViewSchedule" prefHeight="346.0" prefWidth="273.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="43.0" prefWidth="600.0">
