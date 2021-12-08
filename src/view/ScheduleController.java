@@ -43,11 +43,22 @@ public class ScheduleController {
   {
     modelManager = new ModelManager();
     semesterChoiceSchedule.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
+    semesterChoiceSchedule.setValue("2");
+
     classChoiceSchedule.getItems().addAll("X", "Y", "Z", "DK");
+    classChoiceSchedule.setValue("X");
+
     courseChoiceSchedule.getItems().addAll("SDJ", "DMA", "RWD", "SEP");
+    courseChoiceSchedule.setValue("SDJ");
+
     teacherFirstChoiceSchedule.getItems().addAll("ALHE", "SVA", "KLAB", "MIVI", "AHAN", "MWA");
+    teacherFirstChoiceSchedule.setValue("ALHE");
+
     teacherSecondChoiceSchedule.getItems().addAll("ALHE", "SVA", "KLAB", "MIVI", "AHAN", "MWA");
+    teacherSecondChoiceSchedule.setValue("SVA");
+
     roomChoiceSchedule.getItems().addAll("C05.15,45", "C05.16a,45", "C05.16b,45", "C03.12,20", "C03.13,125");
+    roomChoiceSchedule.setValue("C05.15,45");
   }
 
   public void handleActions(ActionEvent e)
@@ -69,6 +80,7 @@ public class ScheduleController {
     else if (e.getSource() == removeButtonSchedule)
     {
       System.out.println("clicked!");
+      deleteSelectedItem();
       clearFields();
     }
 
@@ -91,8 +103,10 @@ public class ScheduleController {
                     new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
                     new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
 
-    modelManager.addLesson(lesson);
-    System.out.println(lesson);
+    Class clas = new Class(Integer.parseInt(semesterChoiceSchedule.getValue().toString()), classChoiceSchedule.getValue().toString());
+
+    modelManager.addLesson(lesson, clas);
+    System.out.println(lesson + "\n" + clas);
   }
 
   public void clearFields()
@@ -109,7 +123,13 @@ public class ScheduleController {
     endMinutesSchedule.setText("");
     beginHourSchedule.setText("");
   }
-  
+
+  public void deleteSelectedItem()
+  {
+    Object selsectedItem = listViewSchedule.getSelectionModel().getSelectedItem();
+    listViewSchedule.getItems().remove(selsectedItem);
+  }
+
   public void reset()
   {
     
