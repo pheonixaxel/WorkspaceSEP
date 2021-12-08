@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TeacherList implements Serializable
+public class TeacherList
 {
   private ArrayList<Teacher> teachers;
 

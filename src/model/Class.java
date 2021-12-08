@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Class implements Serializable
+public class Class
 {
   private StudentList students;
   private String id;

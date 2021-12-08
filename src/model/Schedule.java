@@ -3,7 +3,7 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Schedule implements Serializable
+public class Schedule
 {
   private ArrayList<Lesson> lessons;
   private ArrayList<Course> courses;

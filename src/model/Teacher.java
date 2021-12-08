@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Teacher extends Person implements Serializable
+public class Teacher extends Person
 {
 
   public Teacher(String initials)

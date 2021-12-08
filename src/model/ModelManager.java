@@ -18,7 +18,7 @@ import org.w3c.dom.Element;
 
 import utils.*;
 
-public class ModelManager implements Serializable
+public class ModelManager
 {
   private ClassList classList;
   public static final String filePath = "schedule.xml";
