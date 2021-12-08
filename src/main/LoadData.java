@@ -3,7 +3,7 @@ package main;
 import model.Class;
 import model.Student;
 import model.*;
-import utils.*;
+import util.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
