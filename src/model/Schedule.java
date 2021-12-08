@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Schedule
+public class Schedule implements Serializable
 {
   private ArrayList<Lesson> lessons;
   private ArrayList<Course> courses;

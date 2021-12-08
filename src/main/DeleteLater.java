@@ -3,9 +3,8 @@ package main;
 import model.Class;
 import model.ClassList;
 import model.*;
+import model.RoomList;
 import utils.MyFileHandler;
-
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -73,13 +72,13 @@ public class DeleteLater
       MyFileHandler.writeToBinaryFile("classes.bin",classList);
     }
     catch(FileNotFoundException e){System.out.println("File was not found");}
-    catch(IOException e){System.out.println("IO Exception error");}
+    catch(IOException e){System.out.println(e.getMessage());}
 
     try{
       MyFileHandler.writeToBinaryFile("rooms.bin",roomList);
     }
     catch(FileNotFoundException e){System.out.println("File was not found");}
-    catch(IOException e){System.out.println("IO Exception error");}
+    catch(IOException e){System.out.println(e.getMessage());}
 
     System.out.println("Done!");
   }

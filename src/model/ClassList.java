@@ -2,9 +2,10 @@ package model;
 
 import model.Class;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ClassList
+public class ClassList implements Serializable
 {
   private ArrayList<Class> classes;
 

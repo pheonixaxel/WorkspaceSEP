@@ -1,6 +1,8 @@
 package model;
 
-public class Teacher extends Person
+import java.io.Serializable;
+
+public class Teacher extends Person implements Serializable
 {
 
   public Teacher(String initials)

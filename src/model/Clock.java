@@ -2,7 +2,10 @@ package model;
 
 import utils.*;
 
-public class Clock {
+import java.io.Serializable;
+
+public class Clock implements Serializable
+{
 
     private int hour;
     private int minute;

@@ -1,6 +1,7 @@
 package model;
 
 import java.io.FileNotFoundException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
@@ -17,7 +18,7 @@ import org.w3c.dom.Element;
 
 import utils.*;
 
-public class ModelManager
+public class ModelManager implements Serializable
 {
   private ClassList classList;
   public static final String filePath = "schedule.xml";
