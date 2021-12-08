@@ -49,7 +49,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <Label fx:id="courseLabelCourses" alignment="CENTER" contentDisplay="CENTER" text="model.Course:" GridPane.rowIndex="1" />
+                        <Label fx:id="courseLabelCourses" alignment="CENTER" contentDisplay="CENTER" text="Course:" GridPane.rowIndex="1" />
                         <ChoiceBox fx:id="courseChoiceCourses" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="semesterLabelCourses" text="Semester:" />
                         <Label fx:id="studentsNameLabelCourses" text="Students name:" GridPane.rowIndex="3" />

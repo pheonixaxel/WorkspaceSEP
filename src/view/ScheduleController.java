@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.*;
+import model.Lesson;
 import model.Class;
 
 public class ScheduleController {
@@ -17,6 +18,8 @@ public class ScheduleController {
   @FXML private Button removeButtonSchedule;
   @FXML private Button goBackSchedule;
 
+  @FXML private ListView listViewSchedule;
+
   @FXML private ChoiceBox semesterChoiceSchedule;
   @FXML private ChoiceBox classChoiceSchedule;
   @FXML private ChoiceBox courseChoiceSchedule;
@@ -28,7 +31,6 @@ public class ScheduleController {
   @FXML private TextField endHourSchedule;
   @FXML private TextField beginHourSchedule;
   @FXML private TextField endMinutesSchedule;
-  @FXML private TextArea textAreaSchedule;
 
   public void initialize(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
@@ -55,12 +57,12 @@ public class ScheduleController {
       System.out.println("clicked!");
 
       String value = "";
-      value += (String) semesterChoiceSchedule.getValue() + ", " + classChoiceSchedule.getValue() + ", " + courseChoiceSchedule.getValue()
+      value += semesterChoiceSchedule.getValue() + ", " + classChoiceSchedule.getValue() + ", " + courseChoiceSchedule.getValue()
               + ", " + teacherFirstChoiceSchedule.getValue() + ", " + teacherSecondChoiceSchedule.getValue()
               + ", " + roomChoiceSchedule.getValue() + ", " + dateChoiceSchedule.getValue() + ", " + beginHourSchedule.getText() + " : " + beginMinutesSchedule.getText()
               + ", " + endHourSchedule.getText() + " : " + endMinutesSchedule.getText() + "\n";
 
-      textAreaSchedule.appendText(value);
+      listViewSchedule.getItems().addAll(value);
       addLesson();
     }
 
@@ -88,9 +90,9 @@ public class ScheduleController {
                     new Date(dateChoiceSchedule.getValue().getDayOfMonth(), dateChoiceSchedule.getValue().getMonthValue(), dateChoiceSchedule.getValue().getYear()),
                     new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
                     new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
-    Class clas = new Class(Integer.parseInt((String) semesterChoiceSchedule.getValue()),classChoiceSchedule.getValue().toString());
-    modelManager.addLesson(lesson,clas);
-    System.out.println(lesson.toString());
+
+    modelManager.addLesson(lesson);
+    System.out.println(lesson);
   }
 
   public void clearFields()
@@ -105,7 +107,6 @@ public class ScheduleController {
     beginMinutesSchedule.setText("");
     endHourSchedule.setText("");
     endMinutesSchedule.setText("");
-    //textAreaSchedule.setText("");
     beginHourSchedule.setText("");
   }
   
