@@ -4,7 +4,7 @@ import utils.*;
 
 import java.io.Serializable;
 
-public class Clock implements Serializable
+public class Clock
 {
 
     private int hour;

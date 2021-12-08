@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Class implements Serializable
+public class Class
 {
   private StudentList students;
   private String id;
@@ -12,7 +12,7 @@ public class Class implements Serializable
 
   public Class(int semester,String id)
   {
-    this.id = id;
+    this.id = id;//DELETE THIS COMMENT
     this.semester=semester;
     students=new StudentList();
     courses=new CourseList();

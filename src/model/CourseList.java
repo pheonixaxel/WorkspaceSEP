@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-public class CourseList implements Serializable
+public class CourseList
 {
   private ArrayList<Course> courses;
 

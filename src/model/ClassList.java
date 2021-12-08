@@ -5,7 +5,7 @@ import model.Class;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ClassList implements Serializable
+public class ClassList implements Serializable//delete this comment
 {
   private ArrayList<Class> classes;
 
@@ -24,5 +24,5 @@ public class ClassList implements Serializable
     }
     return null;
   }
-  public void addClass(Class clas){classes.add(clas);};
+  public void addClass(Class clas){classes.add(clas);};//again
 }

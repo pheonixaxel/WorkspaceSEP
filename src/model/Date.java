@@ -1,12 +1,9 @@
 package model;
 
-import utils.*;
+import utils.IllegalDateException;
 
-import java.io.Serializable;
-
-public class Date implements Serializable
+public class Date
 {
-
     private int day;
     private int month;
     private int year;
