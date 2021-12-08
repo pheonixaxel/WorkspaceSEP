@@ -1,6 +1,5 @@
 package model;
-
-import utils.IllegalDateException;
+import util.IllegalDateException;
 
 public class Date
 {

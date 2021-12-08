@@ -1,8 +1,6 @@
 package model;
 
-import utils.*;
-
-import java.io.Serializable;
+import util.*;
 
 public class Clock
 {

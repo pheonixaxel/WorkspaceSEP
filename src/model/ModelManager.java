@@ -1,7 +1,6 @@
 package model;
 
 import java.io.FileNotFoundException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
@@ -16,7 +15,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import utils.*;
+import util.*;
 
 public class ModelManager
 {
