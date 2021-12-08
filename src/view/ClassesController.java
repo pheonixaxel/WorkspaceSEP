@@ -24,22 +24,23 @@ public class ClassesController
   @FXML Button removeButtonClasses;
   @FXML Button goBackButtonClasses;
 
-  /*public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
+  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.root = root;
-  }*/
+  }
 
   public void initialize()
   {
     modelManager = new ModelManager();
-    ClassList classList = modelManager.getAllClasses();
+
     semesterChoiceClasses.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
-    for(int i=0;i<classList.size();i++)
-    {
-      classChoiceClasses.getItems().add(classList.getClass(i).getId());
-    }
+    semesterChoiceClasses.setValue("2");
+
+    classChoiceClasses.getItems().addAll("X", "Y", "Z", "DK");
+    classChoiceClasses.setValue("X");
+
   }
 
   public void handleActions(ActionEvent e)

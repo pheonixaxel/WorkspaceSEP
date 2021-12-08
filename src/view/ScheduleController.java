@@ -2,19 +2,27 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 
+import javafx.stage.Stage;
 import model.*;
 import model.Lesson;
 import model.Class;
 import util.*;
 
 import javax.swing.*;
+import java.io.IOException;
 
 public class ScheduleController {
-  private Region root;
   private ModelManager modelManager;
+  private Parent root;
+  private Stage stage;
+  private Scene scene;
 
   @FXML private Button addButtonSchedule;
   @FXML private Button removeButtonSchedule;
@@ -73,8 +81,7 @@ public class ScheduleController {
     }
   }
 
-  public void handleActions(ActionEvent e)
-  {
+  public void handleActions(ActionEvent e) throws IOException {
     if (e.getSource() == addButtonSchedule)
     {
       System.out.println("clicked!");
@@ -92,18 +99,20 @@ public class ScheduleController {
     else if (e.getSource() == removeButtonSchedule)
     {
       System.out.println("clicked!");
+      Object selectedItem = listViewSchedule.getSelectionModel().getSelectedItem();
+      listViewSchedule.getItems().remove(selectedItem);
       clearFields();
     }
 
     else if (e.getSource() == goBackSchedule)
     {
       System.out.println("clicked!");
-      Alert alert = new Alert(Alert.AlertType.ERROR);
-      alert.setTitle("Bro... u got an ERROR");
-      alert.setHeaderText("You wanna go back??");
-      alert.setContentText("Go back where u lazy MF!? Go work and do the other pages! fking cunt...");
 
-      alert.showAndWait();
+      Parent root = FXMLLoader.load(getClass().getResource("StudentsGUI.fxml"));
+      stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+      scene = new Scene(root);
+      stage.setScene(scene);
+      stage.show();
     }
   }
 
@@ -136,10 +145,5 @@ public class ScheduleController {
   public void reset()
   {
 
-  }
-
-
-  public Region getRoot() {
-    return root;
   }
 }
