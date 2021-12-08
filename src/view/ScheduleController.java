@@ -30,12 +30,6 @@ public class ScheduleController {
   @FXML private TextField beginHourSchedule;
   @FXML private TextField endMinutesSchedule;
 
-  public void initialize(ModelManager modelManager, Region root)
-  {
-    this.modelManager = modelManager;
-    this.root = root;
-  }
-
   public void initialize()
   {
     modelManager = new ModelManager();
@@ -44,20 +38,36 @@ public class ScheduleController {
     for(int i=0;i<classList.size();i++)
     {
       classChoiceSchedule.getItems().add(classList.getClass(i).getId());
+
+      CourseList courseList = classList.getClass(i).getAllCourses();
+      for(int j=0;j<courseList.size();j++)
+      {
+        if(!courseChoiceSchedule.getItems().contains(courseList.getCourse(j).getId()))
+        {
+          courseChoiceSchedule.getItems().add(courseList.getCourse(j).getId());
+        }
+
+        TeacherList teacherList = courseList.getCourse(j).getAllTeachers();
+        for(int k=0;k<teacherList.size();k++)
+        {
+          //System.out.println(teacherList.getTeacher(k).getInitials());
+          if(!teacherFirstChoiceSchedule.getItems().contains(teacherList.getTeacher(k).getInitials()))
+          {
+            teacherFirstChoiceSchedule.getItems().add(teacherList.getTeacher(k).getInitials());
+          }
+          if(!teacherSecondChoiceSchedule.getItems().contains(teacherList.getTeacher(k).getInitials()))
+          {
+            teacherSecondChoiceSchedule.getItems().add(teacherList.getTeacher(k).getInitials());
+          }
+        }
+      }
     }
-
-
-    /*
-    semesterChoiceSchedule.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
-    classChoiceSchedule.getItems().addAll("X", "Y", "Z", "DK");
-    courseChoiceSchedule.getItems().addAll("SDJ", "DMA", "RWD", "SEP");
-    teacherFirstChoiceSchedule.getItems().addAll("ALHE", "SVA", "KLAB", "MIVI", "AHAN", "MWA");
-    teacherSecondChoiceSchedule.getItems().addAll("ALHE", "SVA", "KLAB", "MIVI", "AHAN", "MWA");
-    roomChoiceSchedule.getItems().addAll("C05.15,45", "C05.16a,45", "C05.16b,45", "C03.12,20", "C03.13,125");
-    */
+    RoomList roomList = modelManager.getAllRooms();
+    for(int i=0;i<roomList.size();i++)
+    {
+      roomChoiceSchedule.getItems().add(roomList.getRoom(i).getId());
+    }
   }
-
-
 
   public void handleActions(ActionEvent e)
   {
