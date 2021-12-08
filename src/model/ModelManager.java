@@ -75,12 +75,14 @@ public class ModelManager
   {
     try
     {
-      MyFileHandler.appendToTextFile("schedule.txt", clas.getSchedule().toString());
+      String filePath = "schedule"+clas.getSemester()+clas.getId()+".bin";
+      MyFileHandler.writeToBinaryFile(filePath, clas.getSchedule());
     }
     catch (FileNotFoundException e)
     {
       System.out.println("File was not found, or could not be opened");
     }
+    catch (IOException e){System.out.println(e.getMessage());}
   }
 
   public void saveClasses(ClassList classList)
@@ -100,6 +102,18 @@ public class ModelManager
   public ArrayList<Lesson> getLessonsForDate(String date,Class clas)
   {
     return clas.getSchedule().getLessonsForDate(date);
+  }
+
+  public Schedule getScheduleFromFile(String filePath)
+  {
+    Schedule rtrn= new Schedule();
+    try{
+      rtrn = (Schedule)MyFileHandler.readFromBinaryFile(filePath);
+    }
+    catch(FileNotFoundException e){System.out.println("File not found");}
+    catch (IOException e){System.out.println(e.getMessage());}
+    catch (ClassNotFoundException e){System.out.println("Classes not found");}
+    return rtrn;
   }
 
   public static void sendSchedule(Class clas)
