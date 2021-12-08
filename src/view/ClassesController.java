@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.ModelManager;
+import model.Class;
+import model.*;
 
 public class ClassesController
 {
@@ -13,13 +15,42 @@ public class ClassesController
   private ViewHandler viewHandler;
 
   @FXML ChoiceBox semesterChoiceClasses;
+  @FXML ChoiceBox classChoiceClasses;
 
+  @FXML TextField studentsNameFieldClasses;
+  @FXML TextField studentsIdFieldClasses;
+
+  @FXML Button addButtonClasses;
+  @FXML Button removeButtonClasses;
+  @FXML Button goBackButtonClasses;
 
   public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.viewHandler = viewHandler;
     this.modelManager = modelManager;
     this.root = root;
+  }
+
+  public void initialize()
+  {
+    modelManager = new ModelManager();
+
+    semesterChoiceClasses.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
+    semesterChoiceClasses.setValue("2");
+
+    classChoiceClasses.getItems().addAll("X", "Y", "Z", "DK");
+    classChoiceClasses.setValue("X");
+
+  }
+
+  public void handleActions(ActionEvent e)
+  {
+    if(e.getSource() == addButtonClasses)
+    {
+      Student student = new Student(studentsNameFieldClasses.getText(), Integer.parseInt(studentsIdFieldClasses.getText()));
+
+      modelManager.addStudentToClass(student, modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()));
+    }
   }
 
   public void reset()
@@ -36,8 +67,5 @@ public class ClassesController
     return root;
   }
 
-  public void handleActions(ActionEvent e)
-  {
-    //if(e.getSource() == )
-  }
+
 }

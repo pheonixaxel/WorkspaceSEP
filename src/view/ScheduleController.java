@@ -4,9 +4,13 @@ import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+
 import model.*;
 import model.Lesson;
 import model.Class;
+import util.*;
+
+import javax.swing.*;
 
 public class ScheduleController {
   private Region root;
@@ -96,9 +100,9 @@ public class ScheduleController {
   public void addLesson()
   {
     Lesson lesson = new Lesson(new Clock(Integer.parseInt(beginHourSchedule.getText()), Integer.parseInt(beginMinutesSchedule.getText())),
-                    new Date(dateChoiceSchedule.getValue().getDayOfMonth(), dateChoiceSchedule.getValue().getMonthValue(), dateChoiceSchedule.getValue().getYear()),
-                    new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
-                    new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
+            new Date(dateChoiceSchedule.getValue().getDayOfMonth(), dateChoiceSchedule.getValue().getMonthValue(), dateChoiceSchedule.getValue().getYear()),
+            new Clock(Integer.parseInt(endHourSchedule.getText()), Integer.parseInt(endMinutesSchedule.getText())),
+            new Course(Integer.parseInt((String) semesterChoiceSchedule.getValue()), courseChoiceSchedule.getValue().toString()));
 
     //modelManager.addLesson(lesson);
     System.out.println(lesson);

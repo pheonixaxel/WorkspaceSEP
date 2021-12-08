@@ -16,6 +16,8 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import model.Class;
+
 import util.*;
 
 public class ModelManager
@@ -48,6 +50,10 @@ public class ModelManager
   public void addStudent(Student student, StudentList list)
   {
     list.addStudent(student);
+  }
+
+  public void addStudentToClass(Student student, Class clas){
+    clas.addStudent(student);
   }
 
   public void removeStudent(Student student, StudentList list)
