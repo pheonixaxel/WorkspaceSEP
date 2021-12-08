@@ -139,8 +139,8 @@ public class ScheduleController {
             roomList.getRoom(roomChoiceSchedule.getValue().toString()));
     modelManager.addLesson(lesson,classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
     modelManager.saveSchedule(classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
-    //updateListView();
-    System.out.println(lesson);
+    modelManager.saveClasses(classList);
+    updateListView();
   }
 
   public void clearFields()
