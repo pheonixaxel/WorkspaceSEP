@@ -20,8 +20,8 @@ function showData(xml){
         let lessons = days[i].getElementsByTagName("lesson");
         for(let j=0;j<lessons.length;j++)
         {
-            if(i==0)array[j+1]="<tr>";
-            array[j+1]+="<td class='scheduleCell'>"+
+            if(i==0)array[j+1]="<tr >";
+            array[j+1]+="<td class='scheduleCell col-2'>"+
             lessons[j].getElementsByTagName("beginTime")[0].childNodes[0].nodeValue+"-"+
             lessons[j].getElementsByTagName("endTime")[0].childNodes[0].nodeValue+"<br>"+
             lessons[j].getElementsByTagName("id")[0].childNodes[0].nodeValue+", "+

@@ -2,18 +2,14 @@ body, html {
     height:100%;
     margin: 0;
 }
-.bg-image {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-image: url("https://data.1freewallpapers.com/detail/dark-cubes-glow-computer-graphics-free.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-}
+body{
 
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color:black;
+}
 .fa {
     margin: 2px;
     padding: 10px;

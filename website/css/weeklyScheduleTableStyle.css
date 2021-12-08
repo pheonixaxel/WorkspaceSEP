@@ -7,19 +7,32 @@ body{
     background-size: cover;
     color:black;
 }
-h2{
+h3{
     position: relative;
-    text-align: right;
+    text-align: left;
+    color: white;
 }
 h1{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    color: white;
 }
 
-td {
+.padding-table-columns td {
     text-align: center;
-    border:1px solid white;
+    border:5px solid black;
 
 }
-
+#next
+{
+float: right;}
+.table
+{
+    width: 98%;
+    margin: auto;
+}
+.arrow
+{
+high: 60px;
+width: 60px;}
