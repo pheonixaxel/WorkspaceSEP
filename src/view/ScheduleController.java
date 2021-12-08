@@ -92,6 +92,8 @@ public class ScheduleController {
     else if (e.getSource() == removeButtonSchedule)
     {
       System.out.println("clicked!");
+      Object selectedItem = listViewSchedule.getSelectionModel().getSelectedItem();
+      listViewSchedule.getItems().remove(selectedItem);
       clearFields();
     }
 
