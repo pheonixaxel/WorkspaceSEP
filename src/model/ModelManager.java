@@ -61,6 +61,11 @@ public class ModelManager
     list.removeStudent(student);
   }
 
+  public void removeStudentFromClass(Student student, Class clas)
+  {
+    clas.removeStudent(student);
+  }
+
   public void addLesson(Lesson lesson, Class clas)
   {
     clas.getSchedule().addLesson(lesson);
