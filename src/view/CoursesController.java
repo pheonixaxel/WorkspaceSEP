@@ -88,10 +88,13 @@ public class CoursesController
     }
 
     public void addStudent()
-    {/*
+    {
+
+      /*
       Student student = new Student(studentsNameFieldCourses.getText(), Integer.parseInt(studentsIdFieldCourses.getText()));
       StudentList studentList = modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
-      modelManager.addStudent(student, studentList);*/
+      modelManager.addStudent(student, studentList);
+      */
     }
     public void removeStudent()
     {/*

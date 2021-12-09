@@ -1,18 +1,30 @@
 package view;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
-import model.Class;
+import javafx.stage.Stage;
 import model.ModelManager;
 import model.*;
 
+import java.io.IOException;
+import java.lang.Class;
 import java.util.Arrays;
 
 public class ClassesController
 {
   private Region root;
+
+  private Stage stage;
+  private Scene scene;
+
   private  ModelManager modelManager;
   //private ViewHandler viewHandler;
 
@@ -51,22 +63,37 @@ public class ClassesController
       classChoiceClasses.getItems().add(classList.getClass(i).getId());
     }
 
+    /*
+    TODO
+    when open the listView the class should appear there
+    */
+
     Object studNum = modelManager.getAllClasses().getClass(1,"X").getStudents().getStudent(0).getStudentNumber();
 
     studentsNameFieldClasses.setText(modelManager.getAllClasses().getClass(1,"X").getStudents().getStudent(0).getName());
     studentsIdFieldClasses.setText(studNum.toString());
 
+    /*ObservableList<StudentList> studentObservableList = FXCollections.observableArrayList(modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents());
+
+    listViewClasses.setItems(studentObservableList);
+
+    for (int i = 0; i < modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().size(); i ++)
+    {
+      listViewClasses.getItems().setAll((classList.getClass((Integer.parseInt(semesterChoiceClasses.getValue().toString())), classChoiceClasses.getValue().toString()).getStudents().getStudent(i)));
+
+
+        listViewClasses.setItems();
+    }*/
+
   }
 
-  public void handleActions(ActionEvent e)
-  {
+  public void handleActions(ActionEvent e) throws IOException {
     if(e.getSource() == addButtonClasses)
     {
       Student tempStudent = new Student(studentsNameFieldClasses.getText(), Integer.parseInt(studentsIdFieldClasses.getText()));
 
       ClassList classList = modelManager.getAllClasses();
       modelManager.addStudentToClass(tempStudent, classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()));
-
       modelManager.saveClasses(classList);
 
       listViewClasses.getItems().add(tempStudent.toString());
@@ -82,7 +109,18 @@ public class ClassesController
 
       removeStudent(tempStudent);
 
+      System.out.println(modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()));
+/*
       System.out.println(modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().getStudent(0));
+*/
+    }
+    else if (e.getSource() == goBackButtonClasses)
+    {
+      Parent root = FXMLLoader.load(getClass().getResource("StudentsGUI.fxml"));
+      stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+      scene = new Scene(root);
+      stage.setScene(scene);
+      stage.show();
     }
   }
 
@@ -95,24 +133,52 @@ public class ClassesController
 
   }
 
+  public void addStudent(Student student)
+  {
+    ClassList classList = modelManager.getAllClasses();
+
+    for (int i = 0; i < classList.size(); i ++)
+    {
+      if (!(student.equals(classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().getStudent(i))))
+      {
+        classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()),
+                classChoiceClasses.getValue().toString()).addStudent(student);
+      }
+    }
+  }
+
   public void removeStudent(Student student)
   {
-    StudentList studentList = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents();
+
+    ClassList classList = modelManager.getAllClasses();
+
+    for (int i = 0; i < classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().size(); i ++)
+    {
+        classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()),
+                classChoiceClasses.getValue().toString()).removeStudent(student);
+    }
+
+    modelManager.saveClasses(classList);
+
+    /*ClassList classList = modelManager.getAllClasses();
+    ClassList classListNew = new ClassList();
+
+    StudentList studentList = classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents();
     StudentList studentListNew = new StudentList();
 
-    for (int i = 0; i < studentList.size(); i ++)
+    for (int i = 0; i < classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().size(); i ++)
     {
-      if (!(studentList.getStudent(i).equals(student)))
+      if (!(classList.getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().getStudent(i).equals(student)))
       {
         studentListNew.addStudent(studentList.getStudent(i));
       }
     }
 
-    studentList = studentListNew;
 
-    System.out.println(studentList);
+
     System.out.println();
-    System.out.println(studentListNew);
+    System.out.println();
+    System.out.println(studentListNew);*/
   }
 
   public Region getRoot()

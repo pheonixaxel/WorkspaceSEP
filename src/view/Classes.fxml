@@ -59,7 +59,7 @@
                         <TextField fx:id="studentsIdFieldClasses" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Button fx:id="addButtonClasses" mnemonicParsing="false" onAction="#handleActions" text="Add" GridPane.rowIndex="5" />
                         <Button fx:id="removeButtonClasses" mnemonicParsing="false" onAction="#handleActions" text="Remove" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Button fx:id="goBackButtonClasses" mnemonicParsing="false" text="Go Back" GridPane.rowIndex="7" />
+                        <Button fx:id="goBackButtonClasses" mnemonicParsing="false" onAction="#handleActions" text="Go Back" GridPane.rowIndex="7" />
                     </children>
                     <padding>
                         <Insets left="10.0" />

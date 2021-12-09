@@ -19,6 +19,8 @@ public class Class implements Serializable
     schedule=new Schedule();
   }
 
+  public Class() {}
+
   public CourseList getAllCourses(){return courses;}
 
   public Schedule getSchedule()
