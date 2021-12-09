@@ -20,7 +20,6 @@ public class CoursesController
   @FXML ChoiceBox semesterChoiceCourses;
   @FXML ChoiceBox classChoiceCourses;
   @FXML ChoiceBox courseChoiceCourses;
-  @FXML ChoiceBox classChoiceCourses;
   @FXML TextField studentsNameFieldCourses;
   @FXML TextField studentsIdFieldCourses;
   @FXML TextArea textAreaCourses;
@@ -63,7 +62,7 @@ public class CoursesController
 
   public void updateCourses()
   {
-    textAreaCourses.setText(modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), studentsIdFieldCourses.getText().toString()).toString());
+    //textAreaCourses.setText(modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), studentsIdFieldCourses.getText().toString()).toString());
   }
 
   public Region getRoot()
@@ -89,16 +88,16 @@ public class CoursesController
     }
 
     public void addStudent()
-    {
+    {/*
       Student student = new Student(studentsNameFieldCourses.getText(), Integer.parseInt(studentsIdFieldCourses.getText()));
       StudentList studentList = modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
-      modelManager.addStudent(student, studentList);
+      modelManager.addStudent(student, studentList);*/
     }
     public void removeStudent()
-    {
+    {/*
       Student student = new Student(studentsNameFieldCourses.getText(), Integer.parseInt(studentsIdFieldCourses.getText()));
       StudentList studentList = modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
-      modelManager.removeStudent(student, studentList);
+      modelManager.removeStudent(student, studentList);*/
     }
 
 

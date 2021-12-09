@@ -91,10 +91,7 @@ public class ScheduleController {
 
     else if (e.getSource() == removeButtonSchedule)
     {
-      System.out.println("clicked!");
-      Object selectedItem = listViewSchedule.getSelectionModel().getSelectedItem();
-      listViewSchedule.getItems().remove(selectedItem);
-      clearFields();
+      removeLesson();
     }
 
     else if (e.getSource() == goBackSchedule)
@@ -122,7 +119,7 @@ public class ScheduleController {
     Schedule schedule = modelManager.getScheduleFromFile(filePath);
     for(int i=0;i<schedule.size();i++)
     {
-      listViewSchedule.getItems().add(schedule.getLesson(i).toString());
+      listViewSchedule.getItems().add(schedule.getLesson(i));
       System.out.println(schedule.getLesson(i));
     }
   }
@@ -141,6 +138,16 @@ public class ScheduleController {
     modelManager.saveSchedule(classList.getClass(Integer.parseInt(semesterChoiceSchedule.getValue().toString()),classChoiceSchedule.getValue().toString()));
     modelManager.saveClasses(classList);
     updateListView();
+  }
+
+  public void removeLesson()
+  {/*
+    ClassList classList = modelManager.getAllClasses();
+    System.out.println(listViewSchedule.getSelectionModel().getSelectedItem());
+    Lesson lesson =(Lesson)listViewSchedule.getSelectionModel().getSelectedItem();
+    int semester = Integer.parseInt(semesterChoiceSchedule.getValue().toString());
+    String id =
+    classList.getClass().*/
   }
 
   public void clearFields()
