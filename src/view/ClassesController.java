@@ -97,9 +97,6 @@ public class ClassesController
 
   public void removeStudent(Student student)
   {
-    Class clas = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString());
-    Class clasNew = new Class(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString());
-
     StudentList studentList = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents();
     StudentList studentListNew = new StudentList();
 
@@ -110,6 +107,8 @@ public class ClassesController
         studentListNew.addStudent(studentList.getStudent(i));
       }
     }
+
+    studentList = studentListNew;
 
     System.out.println(studentList);
     System.out.println();
