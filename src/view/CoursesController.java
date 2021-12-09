@@ -1,10 +1,7 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Region;
 import model.*;
 import model.Class;
@@ -18,24 +15,22 @@ public class CoursesController
   //private ViewHandler viewHandler;
 
   @FXML ChoiceBox semesterChoiceCourses;
-  @FXML ChoiceBox classChoiceCourses;
   @FXML ChoiceBox courseChoiceCourses;
   @FXML ChoiceBox classChoiceCourses;
   @FXML TextField studentsNameFieldCourses;
   @FXML TextField studentsIdFieldCourses;
-  @FXML TextArea textAreaCourses;
+  @FXML ListView listViewCourses;
   @FXML Button addButtonCourses;
   @FXML Button removeButtonCourses;
   @FXML Button goBackButtonCourses;
 
-  /*public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
+/*  public void init(ViewHandler viewHandler, ModelManager modelManager, Region root)
   {
     this.modelManager = modelManager;
     this.root=root;
     this.viewHandler= viewHandler;
     reset();
-  }
-*/
+  }*/
   public void initialize()
   {
     modelManager = new ModelManager();
@@ -63,7 +58,7 @@ public class CoursesController
 
   public void updateCourses()
   {
-    textAreaCourses.setText(modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), studentsIdFieldCourses.getText().toString()).toString());
+    listViewCourses.getItems().add(modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).toString());
   }
 
   public Region getRoot()
@@ -77,6 +72,7 @@ public class CoursesController
       if(e.getSource()==addButtonCourses)
       {
         updateCourses();
+        addStudent();
       }
       if(e.getSource()== removeButtonCourses)
       {
@@ -91,13 +87,19 @@ public class CoursesController
     public void addStudent()
     {
       Student student = new Student(studentsNameFieldCourses.getText(), Integer.parseInt(studentsIdFieldCourses.getText()));
-      StudentList studentList = modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
+/*
+      StudentList studentList = modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString());
+*/
+      StudentList studentList = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
       modelManager.addStudent(student, studentList);
     }
     public void removeStudent()
     {
       Student student = new Student(studentsNameFieldCourses.getText(), Integer.parseInt(studentsIdFieldCourses.getText()));
-      StudentList studentList = modelManager.getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
+
+      StudentList studentList = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceCourses.getValue().toString()), classChoiceCourses.getValue().toString()).getStudents();
+
+
       modelManager.removeStudent(student, studentList);
     }
 
