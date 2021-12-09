@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
-import model.ModelManager;
 import model.Class;
+import model.ModelManager;
 import model.*;
+
+import java.util.Arrays;
 
 public class ClassesController
 {
@@ -76,16 +78,11 @@ public class ClassesController
       Object selectedItem = listViewClasses.getSelectionModel().getSelectedItem();
       listViewClasses.getItems().remove(selectedItem);
 
-      Class clas = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString());
-/*
+      Student tempStudent = new Student(studentsNameFieldClasses.getText(), Integer.parseInt(studentsIdFieldClasses.getText()));
 
-    a class has a studentList => remove the student from a studentList that's in the selected class
+      removeStudent(tempStudent);
 
- */
-      studentsNameFieldClasses.setText(selectedItem.toString());
-
-      System.out.println(modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()));
-
+      System.out.println(modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents().getStudent(0));
     }
   }
 
@@ -96,6 +93,27 @@ public class ClassesController
   public void updateClasses()
   {
 
+  }
+
+  public void removeStudent(Student student)
+  {
+    Class clas = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString());
+    Class clasNew = new Class(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString());
+
+    StudentList studentList = modelManager.getAllClasses().getClass(Integer.parseInt(semesterChoiceClasses.getValue().toString()), classChoiceClasses.getValue().toString()).getStudents();
+    StudentList studentListNew = new StudentList();
+
+    for (int i = 0; i < studentList.size(); i ++)
+    {
+      if (!(studentList.getStudent(i).equals(student)))
+      {
+        studentListNew.addStudent(studentList.getStudent(i));
+      }
+    }
+
+    System.out.println(studentList);
+    System.out.println();
+    System.out.println(studentListNew);
   }
 
   public Region getRoot()
