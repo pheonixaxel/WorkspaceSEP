@@ -18,6 +18,8 @@ public class Course implements Serializable
     this.id=id;
     this.semester=semester;
     rooms = new ArrayList<Room>();
+    teachers = new TeacherList();
+    students = new StudentList();
   }
 
   public int getEcts()
