@@ -71,8 +71,8 @@ public class CoursesController
     {
       if(e.getSource()==addButtonCourses)
       {
-        updateCourses();
-        addStudent();
+
+        addStudent();        updateCourses();
       }
       if(e.getSource()== removeButtonCourses)
       {
